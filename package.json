@@ -1,0 +1,23 @@
+{
+  "name": "stui",
+  "version": "0.0.0",
+  "description": "Simple Text UI",
+  "main": "dist/mod.js",
+  "scripts": {
+    "test": "node test/main.js",
+    "pkg": "node scripts/gen-katex-css.js && node scripts/pkg-imgs.js & node scripts/pkg-fonts.js & node scripts/pkg-css.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ddu6/stui.git"
+  },
+  "author": "ddu6",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ddu6/stui/issues"
+  },
+  "homepage": "https://github.com/ddu6/stui#readme",
+  "devDependencies": {
+    "katex": "^0.13.11"
+  }
+}
