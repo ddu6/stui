@@ -1,5 +1,5 @@
 {
-  "name": "stui",
+  "name": "@ddu6/stui",
   "version": "0.0.1",
   "description": "Simple Text UI",
   "main": "dist/mod.js",
