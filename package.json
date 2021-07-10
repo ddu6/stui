@@ -4,7 +4,6 @@
   "description": "Simple Text UI",
   "main": "dist/mod.js",
   "scripts": {
-    "test": "node test/main.js",
     "pkg": "node scripts/pkg-imgs.js & node scripts/pkg-fonts.js & node scripts/pkg-css.js"
   },
   "repository": {
