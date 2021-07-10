@@ -19,6 +19,10 @@ export declare class Div extends CommonEle<'div'> {
     constructor(classes?: string[]);
     addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): this;
 }
+export declare class Span extends CommonEle<'span'> {
+    constructor(classes?: string[]);
+    addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): this;
+}
 export declare class NamedDiv extends Div {
     readonly name: string;
     readonly type: string;

@@ -80,6 +80,15 @@ export class Div extends CommonEle {
         return this;
     }
 }
+export class Span extends CommonEle {
+    constructor(classes = []) {
+        super(classes, 'span');
+    }
+    addEventListener(type, listener, options) {
+        this.element.addEventListener(type, listener, options);
+        return this;
+    }
+}
 export class NamedDiv extends Div {
     constructor(name, type, otherClasses = []) {
         super([name, type].concat(otherClasses));

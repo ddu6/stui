@@ -78,6 +78,15 @@ export class Div extends CommonEle<'div'>{
         return this
     }
 }
+export class Span extends CommonEle<'span'>{
+    constructor(classes:string[]=[]){
+        super(classes,'span')
+    }
+    addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions){
+        this.element.addEventListener(type,listener,options)
+        return this
+    }
+}
 export class NamedDiv extends Div{
     constructor(public readonly name:string,public readonly type:string,otherClasses:string[]=[]){
         super([name,type].concat(otherClasses))
