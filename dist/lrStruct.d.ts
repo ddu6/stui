@@ -11,5 +11,5 @@ export declare class LRStruct extends Shell {
     sashX: number;
     sideWidth: number;
     sashListeners: (() => Promise<void>)[];
-    constructor(title?: string, customCSS?: string);
+    constructor(title?: string, icon?: string, customCSS?: string, otherClasses?: string[]);
 }
