@@ -1,5 +1,6 @@
 import { Button, Div } from "./common.js";
-export declare class LRStruct extends Div {
+import { Shell } from "./shell.js";
+export declare class LRStruct extends Shell {
     readonly side: Div;
     readonly button: Button;
     readonly sideContent: Div;
@@ -10,5 +11,5 @@ export declare class LRStruct extends Div {
     sashX: number;
     sideWidth: number;
     sashListeners: (() => Promise<void>)[];
-    constructor();
+    constructor(customCSS?: string);
 }

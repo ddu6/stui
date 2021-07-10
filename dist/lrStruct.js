@@ -1,8 +1,9 @@
 import { SimpleTouch } from "./touch.js";
 import { Button, Div } from "./common.js";
-export class LRStruct extends Div {
-    constructor() {
-        super(['lr-struct']);
+import { Shell } from "./shell.js";
+export class LRStruct extends Shell {
+    constructor(customCSS = '') {
+        super(customCSS, ['lr-struct']);
         this.side = new Div(['side']);
         this.button = new Button('menu');
         this.sideContent = new Div(['content']);
@@ -12,12 +13,13 @@ export class LRStruct extends Div {
         this.sashing = false;
         this.sashX = 0;
         this.sashListeners = [];
-        this.side.element.append(this.sideContent.element);
-        this.side.element.append(this.cover.element);
-        this.side.element.append(this.sash.element);
-        this.element.append(this.main.element);
-        this.element.append(this.button.element);
-        this.element.append(this.side.element);
+        this
+            .append(this.main)
+            .append(this.button)
+            .append(this.side
+            .append(this.sideContent)
+            .append(this.cover)
+            .append(this.sash));
         this.sideWidth = this.side.element.offsetWidth;
         this.button.addEventListener('click', e => {
             this.side.classList.add('active');

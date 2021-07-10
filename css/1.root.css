@@ -1,4 +1,3 @@
-/* root */
 /* body */
 body {
     --color-text: black;
@@ -19,10 +18,9 @@ body {
     --color-slice: rgba(211, 211, 211, 0.5);
     --color-selection: rgba(135, 206, 235, 0.5);
     --color-span: rgba(27, 31, 35, .05);
-    --font: katex-patch, st-sans, st-sans-extend, KaTeX_Main, "Segoe UI", "Microsoft YaHei", "Hiragino Sans GB", "STHeiti Light", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --font: katex-extract, st-sans, st-sans-extend, "Segoe UI", "Microsoft YaHei", "Hiragino Sans GB", "STHeiti Light", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     --font-mono: roboto-mono-regular, "Segoe UI", "Microsoft YaHei", "Hiragino Sans GB", "STHeiti Light", monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    --font-katex: katex-patch, st-sans, KaTeX_Main, "Segoe UI", "Microsoft YaHei", "Hiragino Sans GB", "STHeiti Light", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    --font-icomoon: icomoon, katex-patch, st-sans, st-sans-extend, KaTeX_Main, "Segoe UI", "Microsoft YaHei", "Hiragino Sans GB", "STHeiti Light", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --font-icomoon: icomoon, katex-extract, st-sans, st-sans-extend, "Segoe UI", "Microsoft YaHei", "Hiragino Sans GB", "STHeiti Light", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     --length-width: calc(210mm - .8in);
     ;
     --length-width-side: 336px;
@@ -157,27 +155,27 @@ body[data-color-scheme=dark] .invert{
 }
 
 /* lrStruct */
-.lr-struct {
+body>.lr-struct {
     min-height: 100vh;
     position: relative;
     display: flex;
 }
 
-.lr-struct>.main {
+body>.lr-struct>.main {
     margin-left: var(--length-width-side);
     flex-grow: 1;
     box-sizing: border-box;
     width: 100%;
 }
 
-.lr-struct>.button {
+body>.lr-struct>.button {
     display: none;
     position: fixed;
     left: 0;
     top: 0;
 }
 
-.lr-struct>.side {
+body>.lr-struct>.side {
     box-sizing: border-box;
     position: fixed;
     left: 0;
@@ -190,24 +188,24 @@ body[data-color-scheme=dark] .invert{
 }
 
 @media screen and (max-width:960px) {
-    .lr-struct>.side:not(.active) {
+    body>.lr-struct>.side:not(.active) {
         display: none;
     }
 
-    .lr-struct>.button {
+    body>.lr-struct>.button {
         display: block;
     }
 
-    .lr-struct>.main {
+    body>.lr-struct>.main {
         margin-left: 0 !important;
     }
 }
 
-.lr-struct>.side>.cover {
+body>.lr-struct>.side>.cover {
     display: none;
 }
 
-.lr-struct.sashing>.side>.cover {
+body>.lr-struct.sashing>.side>.cover {
     display: block;
     position: fixed;
     width: 100vw;
@@ -217,7 +215,7 @@ body[data-color-scheme=dark] .invert{
     cursor: ew-resize;
 }
 
-.lr-struct>.side>.sash {
+body>.lr-struct>.side>.sash {
     height: 100%;
     width: 10px;
     position: absolute;
@@ -226,17 +224,17 @@ body[data-color-scheme=dark] .invert{
     cursor: ew-resize;
 }
 
-.lr-struct.sashing>.side>.sash {
+body>.lr-struct.sashing>.side>.sash {
     background-color: var(--color-slice);
 }
 
-.lr-struct>.side>.content {
+body>.lr-struct>.side>.content {
     height: 100%;
     display: flex;
     flex-direction: column;
 }
 
-.lr-struct>.side>.content.vanished {
+body>.lr-struct>.side>.content.vanished {
     display: none;
 }
 

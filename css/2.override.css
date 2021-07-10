@@ -1,4 +1,3 @@
-/* base */
 /* scroll */
 ::-webkit-scrollbar {
     background-color: transparent;
@@ -67,43 +66,6 @@ input[type="reset"].pushing,
 input[type="submit"].pushing,
 .button.pushing {
     background-color: var(--color-selection);
-}
-
-/* checkbox */
-.checkbox {
-    display: inline-block;
-    min-width: 1em;
-    color: var(--color-light);
-    cursor: pointer;
-    padding: var(--length-padding-span);
-    border-radius: var(--length-padding-span);
-    line-height: 1;
-    text-align: center;
-}
-
-.checkbox.left {
-    text-align: left;
-}
-
-.checkbox.checked {
-    color: var(--color-variable);
-}
-
-.checkbox:hover,
-.checkbox.checking {
-    background-color: var(--color-slice);
-}
-
-.button[data-name].show-name::after,
-.checkbox[data-name].show-name::after {
-    content: attr(data-name);
-    display: inline-block;
-    text-transform: capitalize;
-}
-
-.button.icomoon.show-name::after,
-.checkbox.icomoon.show-name::after {
-    padding-left: var(--length-space);
 }
 
 /* code */
@@ -190,30 +152,6 @@ figcaption>.index,
 .figcaption>.index {
     margin-right: var(--length-gap);
     font-weight: bold;
-}
-
-/* form */
-.form>:not(:first-child) {
-    margin-top: var(--length-gap);
-}
-
-.form,
-.form-line[data-name] {
-    display: flex;
-    flex-direction: column;
-}
-
-.form>*,
-.form-line[data-name]>* {
-    flex-shrink: 0;
-}
-
-.form-line[data-name]::before {
-    display: block;
-    content: attr(data-name);
-    color: var(--color-light);
-    font-size: var(--length-font-log);
-    text-transform: capitalize;
 }
 
 /* h */
@@ -447,42 +385,6 @@ dt,
     white-space: pre-wrap;
 }
 
-/* number bar */
-.number-bar {
-    display: flex;
-    align-items: center;
-    gap: var(--length-space);
-}
-
-.number-bar>.track {
-    flex-grow: 1;
-}
-
-.number-bar>.track>.bar {
-    height: 2px;
-    margin: .5em 0;
-    border-radius: 1px;
-    background-color: var(--color-area);
-}
-
-.number-bar>.track>.bar>.active {
-    height: 100%;
-    border-radius: 1px;
-    background-color: var(--color-variable);
-}
-
-.number-bar>.value {
-    color: var(--color-light);
-    font-size: var(--length-font-log);
-}
-
-.number-bar[data-name]:before {
-    content: attr(data-name);
-    color: var(--color-light);
-    font-size: var(--length-font-log);
-    text-transform: capitalize;
-}
-
 /* p */
 p,
 .p {
@@ -534,121 +436,4 @@ tr:nth-child(even),
 caption,
 .caption {
     margin: var(--length-space) 0;
-}
-
-/* katex */
-.katex {
-    font-family: var(--font-katex);
-    font-size: 1em;
-    line-height: var(--number-ratio-line);
-    white-space: pre;
-}
-
-.katex-display {
-    margin: 0;
-}
-
-/* icomoon */
-.icomoon {
-    font-family: var(--font-icomoon) !important;
-}
-
-.icomoon.star::before {
-    content: "\e905";
-    display: inline-block;
-}
-
-.icomoon.refresh::before {
-    content: "\e904";
-    display: inline-block;
-}
-
-.icomoon.comment::before {
-    content: "\e900";
-    display: inline-block;
-}
-
-.icomoon.send::before {
-    content: "\e902";
-    display: inline-block;
-}
-
-.icomoon.logout::before {
-    content: "\e907";
-    display: inline-block;
-}
-
-.icomoon.login::before {
-    content: "\e908";
-    display: inline-block;
-}
-
-.icomoon.add::before {
-    content: "\e901";
-    display: inline-block;
-}
-
-.icomoon.settings::before {
-    content: "\e906";
-    display: inline-block;
-}
-
-.icomoon.messages::before {
-    content: "\e909";
-    display: inline-block;
-}
-
-.icomoon.img::before {
-    content: "\e90a";
-    display: inline-block;
-}
-
-.icomoon.view::before {
-    content: "\e90c";
-    display: inline-block;
-}
-
-.icomoon.about::before {
-    content: "\e90d";
-    display: inline-block;
-}
-
-.icomoon.search::before {
-    content: "\e90e";
-    display: inline-block;
-}
-
-.icomoon.doc::before {
-    content: "\e90f";
-    display: inline-block;
-}
-
-.icomoon.issures::before {
-    content: "\eab0";
-    display: inline-block;
-}
-
-.icomoon.delete::before {
-    content: "\e90b";
-    display: inline-block;
-}
-
-.icomoon.menu::before {
-    content: "\e903";
-    display: inline-block;
-}
-
-.icomoon.pause::before {
-    content: "\e910";
-    display: inline-block;
-}
-
-.icomoon.play::before {
-    content: "\e911";
-    display: inline-block;
-}
-
-/* hide */
-.hide {
-    display: none !important;
 }

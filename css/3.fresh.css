@@ -1,0 +1,101 @@
+/* checkbox */
+.checkbox {
+    display: inline-block;
+    min-width: 1em;
+    color: var(--color-light);
+    cursor: pointer;
+    padding: var(--length-padding-span);
+    border-radius: var(--length-padding-span);
+    line-height: 1;
+    text-align: center;
+}
+
+.checkbox.left {
+    text-align: left;
+}
+
+.checkbox.checked {
+    color: var(--color-variable);
+}
+
+.checkbox:hover,
+.checkbox.checking {
+    background-color: var(--color-slice);
+}
+
+.button[data-name].show-name::after,
+.checkbox[data-name].show-name::after {
+    content: attr(data-name);
+    display: inline-block;
+    text-transform: capitalize;
+}
+
+.button.icomoon.show-name::after,
+.checkbox.icomoon.show-name::after {
+    padding-left: var(--length-space);
+}
+
+/* form */
+.form>:not(:first-child) {
+    margin-top: var(--length-gap);
+}
+
+.form,
+.form-line[data-name] {
+    display: flex;
+    flex-direction: column;
+}
+
+.form>*,
+.form-line[data-name]>* {
+    flex-shrink: 0;
+}
+
+.form-line[data-name]::before {
+    display: block;
+    content: attr(data-name);
+    color: var(--color-light);
+    font-size: var(--length-font-log);
+    text-transform: capitalize;
+}
+
+/* number bar */
+.number-bar {
+    display: flex;
+    align-items: center;
+    gap: var(--length-space);
+}
+
+.number-bar>.track {
+    flex-grow: 1;
+}
+
+.number-bar>.track>.bar {
+    height: 2px;
+    margin: .5em 0;
+    border-radius: 1px;
+    background-color: var(--color-area);
+}
+
+.number-bar>.track>.bar>.active {
+    height: 100%;
+    border-radius: 1px;
+    background-color: var(--color-variable);
+}
+
+.number-bar>.value {
+    color: var(--color-light);
+    font-size: var(--length-font-log);
+}
+
+.number-bar[data-name]:before {
+    content: attr(data-name);
+    color: var(--color-light);
+    font-size: var(--length-font-log);
+    text-transform: capitalize;
+}
+
+/* hide */
+.hide {
+    display: none !important;
+}

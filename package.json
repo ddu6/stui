@@ -5,7 +5,7 @@
   "main": "dist/mod.js",
   "scripts": {
     "test": "node test/main.js",
-    "pkg": "node scripts/gen-katex-css.js && node scripts/pkg-imgs.js & node scripts/pkg-fonts.js & node scripts/pkg-css.js"
+    "pkg": "node scripts/pkg-imgs.js & node scripts/pkg-fonts.js & node scripts/pkg-css.js"
   },
   "repository": {
     "type": "git",
@@ -16,8 +16,5 @@
   "bugs": {
     "url": "https://github.com/ddu6/stui/issues"
   },
-  "homepage": "https://github.com/ddu6/stui#readme",
-  "devDependencies": {
-    "katex": "^0.13.11"
-  }
+  "homepage": "https://github.com/ddu6/stui#readme"
 }
