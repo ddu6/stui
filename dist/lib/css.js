@@ -238,6 +238,21 @@ body>.lr-struct>.side>.content.vanished {
     display: none;
 }
 
+@media print {
+    body>.lr-struct {
+        min-height: 0;
+    }
+
+    body>.lr-struct>.main {
+        margin-left: 0 !important;
+    }
+
+    body>.lr-struct>.side,
+    body>.lr-struct>.button {
+        display: none;
+    }
+}
+
 /* line */
 .st-line {
     white-space: pre-wrap;
@@ -247,6 +262,13 @@ body>.lr-struct>.side>.content.vanished {
 
 .st-line:not(.vanished):empty::before {
     content: " ";
+}
+
+/* print */
+@page {
+    color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+    size: A4 portrait;
 }`;
 export const override = `/* scroll */
 ::-webkit-scrollbar {
