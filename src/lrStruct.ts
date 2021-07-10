@@ -13,8 +13,8 @@ export class LRStruct extends Shell{
     sashX=0
     sideWidth:number
     sashListeners:(()=>Promise<void>)[]=[]
-    constructor(customCSS=''){
-        super(customCSS,['lr-struct'])        
+    constructor(title='',customCSS=''){
+        super(title,customCSS,['lr-struct'])        
         this
         .append(this.main)
         .append(this.button)

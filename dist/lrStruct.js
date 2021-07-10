@@ -2,8 +2,8 @@ import { SimpleTouch } from "./touch.js";
 import { Button, Div } from "./common.js";
 import { Shell } from "./shell.js";
 export class LRStruct extends Shell {
-    constructor(customCSS = '') {
-        super(customCSS, ['lr-struct']);
+    constructor(title = '', customCSS = '') {
+        super(title, customCSS, ['lr-struct']);
         this.side = new Div(['side']);
         this.button = new Button('menu');
         this.sideContent = new Div(['content']);

@@ -3,12 +3,15 @@ import { st_svg } from "./lib/imgs.js";
 import { fonts } from "./lib/fonts.js";
 import { all } from "./lib/css.js";
 export class Shell extends Div {
-    constructor(customCSS = '', classes = []) {
+    constructor(title = '', customCSS = '', classes = []) {
         super(classes);
         this.styleEle = document.createElement('style');
         document.head.innerHTML += `<meta charset='utf8'><meta name='viewport' content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0'>`;
         if (!document.head.innerHTML.includes("icon")) {
             document.head.innerHTML += `<link rel='icon' href=${JSON.stringify(st_svg)}>`;
+        }
+        if (title !== '' && document.title === '') {
+            document.title = title;
         }
         document.body.style.margin = "0";
         this.styleEle.textContent = fonts + all + customCSS;
