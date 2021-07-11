@@ -414,18 +414,6 @@ figcaption,
     margin: var(--length-space) 0;
 }
 
-figcaption>.tag,
-.figcaption>.tag {
-    margin-right: var(--length-space);
-    font-weight: bold;
-}
-
-figcaption>.index,
-.figcaption>.index {
-    margin-right: var(--length-gap);
-    font-weight: bold;
-}
-
 /* h */
 h1,
 h2,
@@ -620,7 +608,6 @@ ul,
 .ul {
     margin: var(--length-gap) 0;
     padding-left: var(--length-tab);
-    white-space: normal;
 }
 
 li,
@@ -628,15 +615,9 @@ li,
     margin: var(--length-gap) 0;
 }
 
-.st-line li,
-.st-line .li {
-    white-space: pre-wrap;
-}
-
 dl,
 .dl {
     margin: var(--length-gap) 0;
-    white-space: normal;
 }
 
 dd,
@@ -648,13 +629,6 @@ dd,
 dt,
 .dt {
     font-weight: bold;
-}
-
-.st-line dd,
-.st-line dt,
-.st-line .dd,
-.st-line .dt {
-    white-space: pre-wrap;
 }
 
 /* p */
