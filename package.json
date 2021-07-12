@@ -25,6 +25,6 @@
     "webpack-cli": "^4.7.2"
   },
   "dependencies": {
-    "stce": "^0.0.1"
+    "stce": "^0.0.2"
   }
 }
