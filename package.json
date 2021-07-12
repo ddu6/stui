@@ -5,7 +5,7 @@
   "main": "dist/mod.js",
   "scripts": {
     "pkg": "node scripts/pkg-imgs.js & node scripts/pkg-fonts.js & node scripts/pkg-css.js",
-    "test": "webpack"
+    "build": "npm run pkg && tsc && webpack"
   },
   "repository": {
     "type": "git",
