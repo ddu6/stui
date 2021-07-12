@@ -679,8 +679,7 @@ tr:nth-child(even),
     background-color: var(--color-pre);
 }
 
-caption,
-.caption {
+table>caption {
     margin: var(--length-space) 0;
 }`
 export const fresh=`/* checkbox */
