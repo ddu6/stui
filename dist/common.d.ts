@@ -22,11 +22,11 @@ export declare class NumberBar extends NamedDiv {
     readonly track: Div;
     readonly bar: Div;
     readonly activePart: Div;
+    inputListeners: ((value: number) => Promise<void>)[];
     constructor(name: string, min: number, value: number, max: number, log?: boolean, fractionDigits?: number, otherClasses?: string[]);
     setValue(value: number): void;
     protected renderBar(): void;
     getRate(): number;
-    handleInput(value: number): Promise<void>;
 }
 export declare class TimeBar extends NumberBar {
     constructor(name: string, duration?: number, otherClasses?: string[]);

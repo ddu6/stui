@@ -34,6 +34,7 @@ export class NumberBar extends NamedDiv {
         this.track = new Div(['track']);
         this.bar = new Div(['bar']);
         this.activePart = new Div(['active']);
+        this.inputListeners = [];
         if (log) {
             this.min = Math.log(min);
             this.value = Math.log(value);
@@ -46,7 +47,10 @@ export class NumberBar extends NamedDiv {
             const rate = e.offsetX / this.track.element.offsetWidth;
             this.value = this.min + (this.max - this.min) * rate;
             this.renderBar();
-            await this.handleInput(this.log ? Math.exp(this.value) : this.value);
+            const val = this.log ? Math.exp(this.value) : this.value;
+            for (let i = 0; i < this.inputListeners.length; i++) {
+                await this.inputListeners[i](val);
+            }
         });
         this.renderBar();
     }
@@ -72,8 +76,6 @@ export class NumberBar extends NamedDiv {
             return 0;
         }
         return (this.value - this.min) / (this.max - this.min);
-    }
-    async handleInput(value) {
     }
 }
 export class TimeBar extends NumberBar {
