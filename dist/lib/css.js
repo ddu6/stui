@@ -341,21 +341,23 @@ input[type="submit"].pushing,
 
 /* code */
 code,
+pre,
 samp {
     white-space: pre-wrap;
     tab-size: 4;
-    font-size: var(--length-font-span);
     font-family: var(--font-mono);
 }
 
 code {
+    font-size: var(--length-font-span);
     padding: 0 var(--length-padding-span);
-    background-color: var(--color-span);
     border-radius: var(--length-padding-span);
+    background-color: var(--color-span);
 }
 
 pre code {
     padding: 0;
+    border-radius: 0;
     background-color: transparent;
 }
 
@@ -569,17 +571,15 @@ p {
 }
 
 /* pre */
-pre,
-.pre {
+pre {
     display: table;
     break-inside: avoid;
     box-sizing: border-box;
     width: 100%;
-    background-color: var(--color-pre);
     padding: var(--length-padding);
-    margin: var(--length-gap) 0;
     border-radius: var(--length-padding);
-    font: inherit;
+    background-color: var(--color-pre);
+    margin: var(--length-gap) 0;
 }
 
 /* table */
