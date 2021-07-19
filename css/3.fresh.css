@@ -41,13 +41,13 @@
 }
 
 .form,
-.form-line[data-name] {
+.form-line {
     display: flex;
     flex-direction: column;
 }
 
 .form>*,
-.form-line[data-name]>* {
+.form-line>* {
     flex-shrink: 0;
 }
 
