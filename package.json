@@ -1,6 +1,6 @@
 {
   "name": "@ddu6/stui",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "Simple Text UI",
   "main": "dist/mod.js",
   "scripts": {
