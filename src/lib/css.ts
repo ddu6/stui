@@ -253,17 +253,6 @@ body>.lr-struct>.side>.content.vanished {
     }
 }
 
-/* line */
-.st-line {
-    white-space: pre-wrap;
-    display: table;
-    width: 100%;
-}
-
-.st-line:not(.vanished):empty::before {
-    content: " ";
-}
-
 /* print */
 @page {
     color-adjust: exact;
@@ -573,9 +562,9 @@ p {
 /* pre */
 pre {
     display: table;
+    width: 100%;
     break-inside: avoid;
     box-sizing: border-box;
-    width: 100%;
     padding: var(--length-padding);
     border-radius: var(--length-padding);
     background-color: var(--color-pre);

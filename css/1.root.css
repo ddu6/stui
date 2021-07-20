@@ -253,17 +253,6 @@ body>.lr-struct>.side>.content.vanished {
     }
 }
 
-/* line */
-.st-line {
-    white-space: pre-wrap;
-    display: table;
-    width: 100%;
-}
-
-.st-line:not(.vanished):empty::before {
-    content: " ";
-}
-
 /* print */
 @page {
     color-adjust: exact;
