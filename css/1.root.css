@@ -1,5 +1,5 @@
-/* body */
-body {
+/* html */
+html {
     --color-text: black;
     --color-light: #6a737d;
     --color-string: darkorange;
@@ -44,15 +44,15 @@ body {
     font-size: 16px;
 }
 
-body[data-font-size=medium] {
+html[data-font-size=medium] {
     font-size: 17px
 }
 
-body[data-font-size=large] {
+html[data-font-size=large] {
     font-size: 18px
 }
 
-body[data-color-scheme=dark] {
+html[data-color-scheme=dark] {
     --color-text: #cccccc;
     --color-light: #8f8f8f;
     --color-string: #df9e61;
@@ -73,16 +73,16 @@ body[data-color-scheme=dark] {
     --color-span: rgba(58, 61, 65, 0.5);
 }
 
-body[data-color-scheme=dark] .dark{
+html[data-color-scheme=dark] .dark{
     filter: brightness(.5);
 }
 
-body[data-color-scheme=dark] .invert{
+html[data-color-scheme=dark] .invert{
     filter: invert(.9147982) brightness(.8745098);
 }
 
 @media (prefers-color-scheme: dark) {
-    body:not([data-color-scheme=light]) {
+    html:not([data-color-scheme=light]) {
         --color-text: #cccccc;
         --color-light: #8f8f8f;
         --color-string: #df9e61;
@@ -103,53 +103,53 @@ body[data-color-scheme=dark] .invert{
         --color-span: rgba(58, 61, 65, 0.5);
     }
 
-    body:not([data-color-scheme=light]) .dark{
+    html:not([data-color-scheme=light]) .dark{
         filter: brightness(.5);
     }
 
-    body:not([data-color-scheme=light]) .invert{
+    html:not([data-color-scheme=light]) .invert{
         filter: invert(.9147982) brightness(.8745098);
     }
 }
 
 @media screen and (max-width:600px) {
-    body {
+    html {
         font-size: 15px
     }
 
-    body[data-font-size=medium] {
+    html[data-font-size=medium] {
         font-size: 16px
     }
 
-    body[data-font-size=large] {
+    html[data-font-size=large] {
         font-size: 17px
     }
 }
 
 @media screen and (max-width:500px) {
-    body {
+    html {
         font-size: 14px
     }
 
-    body[data-font-size=medium] {
+    html[data-font-size=medium] {
         font-size: 15px
     }
 
-    body[data-font-size=large] {
+    html[data-font-size=large] {
         font-size: 16px
     }
 }
 
 @media screen and (max-width:400px) {
-    body {
+    html {
         font-size: 13px
     }
 
-    body[data-font-size=medium] {
+    html[data-font-size=medium] {
         font-size: 14px
     }
 
-    body[data-font-size=large] {
+    html[data-font-size=large] {
         font-size: 15px
     }
 }
