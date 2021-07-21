@@ -385,7 +385,6 @@ h5,
 h6 {
     margin: var(--length-gap) 0;
     font: inherit;
-    break-inside: avoid;
 }
 
 h1,
@@ -563,7 +562,6 @@ p {
 pre {
     display: table;
     width: 100%;
-    break-inside: avoid;
     box-sizing: border-box;
     padding: var(--length-padding);
     border-radius: var(--length-padding);
