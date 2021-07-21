@@ -279,7 +279,7 @@ a:hover {
     text-decoration: none;
 }
 
-a[href] {
+a[href]:not([href^="#"]) {
     color: var(--color-modifier);
 }
 
