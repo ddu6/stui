@@ -345,6 +345,7 @@ code {
 }
 
 pre code {
+    font: inherit;
     padding: 0;
     border-radius: 0;
     background-color: transparent;
@@ -563,10 +564,11 @@ pre {
     display: table;
     width: 100%;
     box-sizing: border-box;
+    margin: var(--length-gap) 0;
+    font-size: var(--length-font-span);
     padding: var(--length-padding);
     border-radius: var(--length-padding);
     background-color: var(--color-pre);
-    margin: var(--length-gap) 0;
 }
 
 /* table */
