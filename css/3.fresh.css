@@ -30,6 +30,8 @@
     text-transform: capitalize;
 }
 
+.button.show-icon:not(:empty)::after,
+.checkbox.show-icon:not(:empty)::after,
 .button.show-icon.show-name::after,
 .checkbox.show-icon.show-name::after {
     padding-left: var(--length-space);
