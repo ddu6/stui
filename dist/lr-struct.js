@@ -5,7 +5,7 @@ export class LRStruct extends Shell {
     constructor(title = '', icon = '', customCSS = '', otherClasses = []) {
         super(title, icon, customCSS, ['lr struct'].concat(otherClasses));
         this.side = new Div(['side']);
-        this.button = new Button('menu', ['show icon']);
+        this.button = new Button('menu');
         this.sideContent = new Div(['content']);
         this.main = new Div(['main']);
         this.sash = new Div(['sash']);

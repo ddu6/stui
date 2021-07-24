@@ -2,12 +2,12 @@ import {Div,NamedDiv} from 'stce'
 export * from 'stce'
 export class Checkbox extends NamedDiv{
     constructor(name:string,otherClasses:string[]=[]){
-        super(name,'checkbox',otherClasses)
+        super(name,'checkbox',['show icon'].concat(otherClasses))
     }
 }
 export class Button extends NamedDiv{
     constructor(name:string,otherClasses:string[]=[]){
-        super(name,'button',otherClasses)
+        super(name,'button',['show icon'].concat(otherClasses))
     }
 }
 export class FormLine extends NamedDiv{

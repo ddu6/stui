@@ -4,7 +4,7 @@ import { Shell } from "./shell"
 
 export class LRStruct extends Shell{
     readonly side=new Div(['side'])
-    readonly button=new Button('menu',['show icon'])
+    readonly button=new Button('menu')
     readonly sideContent=new Div(['content'])
     readonly main=new Div(['main'])
     readonly sash=new Div(['sash'])
