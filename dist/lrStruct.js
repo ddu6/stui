@@ -1,11 +1,11 @@
-import { SimpleTouch } from "./touch.js";
-import { Button, Div } from "./common.js";
-import { Shell } from "./shell.js";
+import { SimpleTouch } from "./touch";
+import { Button, Div } from "./common";
+import { Shell } from "./shell";
 export class LRStruct extends Shell {
     constructor(title = '', icon = '', customCSS = '', otherClasses = []) {
         super(title, icon, customCSS, ['lr-struct'].concat(otherClasses));
         this.side = new Div(['side']);
-        this.button = new Button('menu');
+        this.button = new Button('menu', ['show-icon']);
         this.sideContent = new Div(['content']);
         this.main = new Div(['main']);
         this.sash = new Div(['sash']);

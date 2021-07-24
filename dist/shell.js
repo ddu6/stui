@@ -1,7 +1,8 @@
-import { Div } from "./common.js";
-import { st_png } from "./lib/imgs.js";
-import { fonts } from "./lib/fonts.js";
-import { all } from "./lib/css.js";
+import { Div } from "./common";
+import { st_png } from "./lib/imgs";
+import { all as allIcons } from './lib/icons';
+import { all as allFonts } from "./lib/fonts";
+import { all as allCSS } from "./lib/css";
 export class Shell extends Div {
     constructor(title = '', icon = '', customCSS = '', classes = []) {
         super(classes);
@@ -17,7 +18,7 @@ export class Shell extends Div {
             document.title = title;
         }
         document.body.style.margin = "0";
-        this.styleEle.textContent = fonts + all + customCSS;
+        this.styleEle.textContent = allIcons + allFonts + allCSS + customCSS;
         document.body.append(this.styleEle);
         document.body.append(this.element);
     }

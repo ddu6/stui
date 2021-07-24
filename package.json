@@ -4,7 +4,7 @@
   "description": "Simple Text UI",
   "main": "dist/mod.js",
   "scripts": {
-    "pkg": "node scripts/pkg-imgs.js & node scripts/pkg-fonts.js & node scripts/pkg-css.js",
+    "pkg": "node scripts/pkg-imgs.js & node scripts/pkg-icons.js & node scripts/pkg-fonts.js & node scripts/pkg-css.js",
     "build": "npm run pkg && tsc && webpack"
   },
   "repository": {

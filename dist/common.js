@@ -3,13 +3,11 @@ export * from 'stce';
 export class Checkbox extends NamedDiv {
     constructor(name, otherClasses = []) {
         super(name, 'checkbox', otherClasses);
-        this.element.classList.add('icomoon');
     }
 }
 export class Button extends NamedDiv {
     constructor(name, otherClasses = []) {
         super(name, 'button', otherClasses);
-        this.element.classList.add('icomoon');
     }
 }
 export class FormLine extends NamedDiv {

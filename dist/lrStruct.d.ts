@@ -1,5 +1,5 @@
-import { Button, Div } from "./common.js";
-import { Shell } from "./shell.js";
+import { Button, Div } from "./common";
+import { Shell } from "./shell";
 export declare class LRStruct extends Shell {
     readonly side: Div;
     readonly button: Button;

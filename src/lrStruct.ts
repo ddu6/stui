@@ -1,10 +1,10 @@
-import { SimpleTouch } from "./touch.js"
-import { Button, Div } from "./common.js"
-import { Shell } from "./shell.js"
+import { SimpleTouch } from "./touch"
+import { Button, Div } from "./common"
+import { Shell } from "./shell"
 
 export class LRStruct extends Shell{
     readonly side=new Div(['side'])
-    readonly button=new Button('menu')
+    readonly button=new Button('menu',['show-icon'])
     readonly sideContent=new Div(['content'])
     readonly main=new Div(['main'])
     readonly sash=new Div(['sash'])
