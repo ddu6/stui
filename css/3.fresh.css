@@ -23,18 +23,17 @@
     background-color: var(--color-slice);
 }
 
+.button.show-icon:not(:empty)::before,
+.checkbox.show-icon:not(:empty)::before,
+.button.show-icon.show-name::before,
+.checkbox.show-icon.show-name::before {
+    padding-right: var(--length-space);
+}
+
 .button[data-name].show-name::after,
 .checkbox[data-name].show-name::after {
     content: attr(data-name);
-    display: inline-block;
     text-transform: capitalize;
-}
-
-.button.show-icon:not(:empty)::after,
-.checkbox.show-icon:not(:empty)::after,
-.button.show-icon.show-name::after,
-.checkbox.show-icon.show-name::after {
-    padding-left: var(--length-space);
 }
 
 /* form */
