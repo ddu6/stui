@@ -18,9 +18,9 @@ html {
     --color-slice: rgba(211, 211, 211, 0.5);
     --color-selection: rgba(135, 206, 235, 0.5);
     --color-span: rgba(27, 31, 35, .05);
-    --font: st-sans, katex-extract, "Segoe UI", "Microsoft YaHei", "Hiragino Sans GB", "STHeiti Light", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    --font-mono: roboto-mono-regular, "Segoe UI", "Microsoft YaHei", "Hiragino Sans GB", "STHeiti Light", monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    --font-icomoon: icomoon, st-sans, katex-extract, "Segoe UI", "Microsoft YaHei", "Hiragino Sans GB", "STHeiti Light", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --font: st-sans, katex-extract, "Segoe UI", "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --font-mono: roboto-mono-regular, "Segoe UI", "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei", monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --font-icomoon: icomoon, st-sans, katex-extract, "Segoe UI", "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     --length-width: calc(210mm - .8in);
     ;
     --length-width-side: 336px;
