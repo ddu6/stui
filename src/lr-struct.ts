@@ -4,7 +4,7 @@ import { Shell } from "./shell"
 
 export class LRStruct extends Shell{
     readonly side=new Div(['side'])
-    readonly button=new Button('menu',['show-icon'])
+    readonly button=new Button('menu',['show icon'])
     readonly sideContent=new Div(['content'])
     readonly main=new Div(['main'])
     readonly sash=new Div(['sash'])
@@ -14,7 +14,7 @@ export class LRStruct extends Shell{
     sideWidth:number
     sashListeners:(()=>Promise<void>)[]=[]
     constructor(title='',icon='',customCSS='',otherClasses:string[]=[]){
-        super(title,icon,customCSS,['lr-struct'].concat(otherClasses))        
+        super(title,icon,customCSS,['lr struct'].concat(otherClasses))        
         this
         .append(this.main)
         .append(this.button)
@@ -25,7 +25,7 @@ export class LRStruct extends Shell{
             .append(this.sash)
         )
         this.sideWidth=this.side.element.offsetWidth
-        this.button.addEventListener('click',e=>{
+        this.button.addEventListener('click',()=>{
             this.side.classList.add('active')
         })
         this.main.addEventListener('click',e=>{
@@ -84,7 +84,7 @@ export class LRStruct extends Shell{
                 this.sideContent.classList.remove('vanished')
             }
         })
-        document.addEventListener('mouseup',async e=>{
+        document.addEventListener('mouseup',async ()=>{
             if(this.sashing!==true){
                 return
             }
@@ -94,7 +94,7 @@ export class LRStruct extends Shell{
                 await this.sashListeners[i]()
             }
         })
-        document.addEventListener('touchend',async e=>{
+        document.addEventListener('touchend',async ()=>{
             if(this.sashing!==true){
                 return
             }

@@ -3,9 +3,9 @@ import { Button, Div } from "./common";
 import { Shell } from "./shell";
 export class LRStruct extends Shell {
     constructor(title = '', icon = '', customCSS = '', otherClasses = []) {
-        super(title, icon, customCSS, ['lr-struct'].concat(otherClasses));
+        super(title, icon, customCSS, ['lr struct'].concat(otherClasses));
         this.side = new Div(['side']);
-        this.button = new Button('menu', ['show-icon']);
+        this.button = new Button('menu', ['show icon']);
         this.sideContent = new Div(['content']);
         this.main = new Div(['main']);
         this.sash = new Div(['sash']);
@@ -21,7 +21,7 @@ export class LRStruct extends Shell {
             .append(this.cover)
             .append(this.sash));
         this.sideWidth = this.side.element.offsetWidth;
-        this.button.addEventListener('click', e => {
+        this.button.addEventListener('click', () => {
             this.side.classList.add('active');
         });
         this.main.addEventListener('click', e => {
@@ -82,7 +82,7 @@ export class LRStruct extends Shell {
                 this.sideContent.classList.remove('vanished');
             }
         });
-        document.addEventListener('mouseup', async (e) => {
+        document.addEventListener('mouseup', async () => {
             if (this.sashing !== true) {
                 return;
             }
@@ -92,7 +92,7 @@ export class LRStruct extends Shell {
                 await this.sashListeners[i]();
             }
         });
-        document.addEventListener('touchend', async (e) => {
+        document.addEventListener('touchend', async () => {
             if (this.sashing !== true) {
                 return;
             }
