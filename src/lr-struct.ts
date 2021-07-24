@@ -28,7 +28,7 @@ export class LRStruct extends Shell{
         this.button.addEventListener('click',()=>{
             this.side.classList.add('active')
         })
-        this.main.addEventListener('click',e=>{
+        this.main.addEventListener('click',()=>{
             this.side.classList.remove('active')
         })
         this.sash.addEventListener('mousedown',e=>{
