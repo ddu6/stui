@@ -1,7 +1,6 @@
 import { Div } from "./common"
 import { st_png } from "./lib/imgs"
 import { all as allIcons } from './lib/icons'
-import { all as allFonts } from "./lib/fonts"
 import { all as allCSS } from "./lib/css"
 
 export class Shell extends Div{
@@ -19,7 +18,7 @@ export class Shell extends Div{
             document.title=title
         }
         document.body.style.margin="0"
-        this.styleEle.textContent=allIcons+allFonts+allCSS+customCSS
+        this.styleEle.textContent=allIcons+allCSS+customCSS
         document.body.append(this.styleEle)
         document.body.append(this.element)
     }
