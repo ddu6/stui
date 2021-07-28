@@ -1,5 +1,5 @@
 import { Div } from "./common";
-import { st_png } from "./lib/imgs";
+import { st_circle_png } from "./lib/imgs";
 import { all as allIcons } from './lib/icons';
 import { all as allCSS } from "./lib/css";
 export class Shell extends Div {
@@ -9,7 +9,7 @@ export class Shell extends Div {
         document.head.innerHTML += `<meta charset='utf8'><meta name='viewport' content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0'>`;
         if (!document.head.innerHTML.includes("icon")) {
             if (icon === '') {
-                icon = st_png;
+                icon = st_circle_png;
             }
             document.head.innerHTML += `<link rel='icon' href=${JSON.stringify(icon)}>`;
         }
