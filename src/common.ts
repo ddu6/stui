@@ -24,7 +24,6 @@ export class NumberBar extends NamedDiv{
     readonly valEle=new Div(['value'])
     readonly track=new Div(['track'])
     readonly bar=new Div(['bar'])
-    readonly activePart=new Div(['active'])
     inputListeners:((value:number)=>Promise<void>)[]=[]
     constructor(
         name:string,
@@ -32,7 +31,8 @@ export class NumberBar extends NamedDiv{
         protected value:number,
         protected max:number,
         protected log=false,
-        protected fractionDigits=1,
+        protected fractionDigits=3,
+        public isStatic=false,
         otherClasses:string[]=[]
     ){
         super(name,'number bar',otherClasses)
@@ -43,13 +43,14 @@ export class NumberBar extends NamedDiv{
         }
         this
         .append(
-            this.track.append(
-                this.bar.append(this.activePart)
-            )
+            this.track.append(this.bar)
         )
         .append(this.valEle)
         
         this.track.addEventListener('click',async e=>{
+            if(isStatic){
+                return
+            }
             const rate=e.offsetX/this.track.element.offsetWidth
             this.value=this.min+(this.max-this.min)*rate
             this.renderBar()
@@ -58,6 +59,16 @@ export class NumberBar extends NamedDiv{
                 await this.inputListeners[i](val)
             }
         })
+        this.renderBar()
+    }
+    setMin(min:number){
+        if(this.log){
+            min=Math.log(min)
+        }
+        if(min>this.value||!isFinite(min)){
+            min=this.value
+        }
+        this.min=min
         this.renderBar()
     }
     setValue(value:number){
@@ -72,9 +83,30 @@ export class NumberBar extends NamedDiv{
         this.value=value
         this.renderBar()
     }
+    setMax(max:number){
+        if(this.log){
+            max=Math.log(max)
+        }
+        if(max<this.value||!isFinite(max)){
+            max=this.value
+        }
+        this.max=max
+        this.renderBar()
+    }
     protected renderBar(){
-        this.activePart.style.width=this.getRate()*100+'%'
-        this.valEle.setText((this.log?Math.exp(this.value):this.value).toFixed(this.fractionDigits))
+        const p=this.getRate()*100+'%'
+        this.bar.style.background=`linear-gradient(to right, var(--color-variable) ${p}, var(--color-area) ${p})`
+        this.renderValue()
+    }
+    protected renderValue(){
+        const p=Math.pow(10,this.fractionDigits)
+        this.valEle.setText(
+            (
+                Math.round(
+                    (this.log?Math.exp(this.value):this.value)*p
+                )/p
+            ).toString()
+        )
     }
     getRate(){
         if(this.max<=this.min){
@@ -83,20 +115,32 @@ export class NumberBar extends NamedDiv{
         return (this.value-this.min)/(this.max-this.min)
     }
 }
-export class TimeBar extends NumberBar{
-    constructor(name:string,duration=0,otherClasses:string[]=[]){
-        super(name,0,0,duration,false,1,otherClasses)
+export class DataBar extends NumberBar{
+    constructor(name:string,used:number,quota:number,isStatic=false,otherClasses:string[]=[]){
+        super(name,0,used,quota,false,0,isStatic,otherClasses)
     }
-    protected renderBar(){
-        this.activePart.style.width=this.getRate()*100+'%'
-        this.valEle.setText(TimeBar.prettyTime(this.value)+'/'+TimeBar.prettyTime(this.max))
+    protected renderValue(){
+        this.valEle.setText(DataBar.prettyData(this.value)+' / '+DataBar.prettyData(this.max))
     }
-    setDuration(duration:number){
-        if(duration<this.value||!isFinite(duration)){
-            duration=this.value
+    static prettyData(number:number){
+        if(number<1024){
+            return number+' B'
         }
-        this.max=duration
-        this.renderBar()
+        if(number<1024*1024){
+            return number/1024+' KiB'
+        }
+        if(number<1024*1024*1024){
+            return Math.round(number/1024/1024*1000)/1000+' MiB'
+        }
+        return Math.round(number/1024/1024/1024*1000)/1000+' GiB'
+    }
+}
+export class TimeBar extends NumberBar{
+    constructor(name:string,duration=0,isStatic=false,otherClasses:string[]=[]){
+        super(name,0,0,duration,false,0,isStatic,otherClasses)
+    }
+    protected renderValue(){
+        this.valEle.setText(TimeBar.prettyTime(this.value)+'/'+TimeBar.prettyTime(this.max))
     }
     static prettyTime(time:number){
         const m=Math.floor((time%3600)/60).toString().padStart(2,'0')

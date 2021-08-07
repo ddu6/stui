@@ -18,19 +18,26 @@ export declare class NumberBar extends NamedDiv {
     protected max: number;
     protected log: boolean;
     protected fractionDigits: number;
+    isStatic: boolean;
     readonly valEle: Div;
     readonly track: Div;
     readonly bar: Div;
-    readonly activePart: Div;
     inputListeners: ((value: number) => Promise<void>)[];
-    constructor(name: string, min: number, value: number, max: number, log?: boolean, fractionDigits?: number, otherClasses?: string[]);
+    constructor(name: string, min: number, value: number, max: number, log?: boolean, fractionDigits?: number, isStatic?: boolean, otherClasses?: string[]);
+    setMin(min: number): void;
     setValue(value: number): void;
+    setMax(max: number): void;
     protected renderBar(): void;
+    protected renderValue(): void;
     getRate(): number;
 }
+export declare class DataBar extends NumberBar {
+    constructor(name: string, used: number, quota: number, isStatic?: boolean, otherClasses?: string[]);
+    protected renderValue(): void;
+    static prettyData(number: number): string;
+}
 export declare class TimeBar extends NumberBar {
-    constructor(name: string, duration?: number, otherClasses?: string[]);
-    protected renderBar(): void;
-    setDuration(duration: number): void;
+    constructor(name: string, duration?: number, isStatic?: boolean, otherClasses?: string[]);
+    protected renderValue(): void;
     static prettyTime(time: number): string;
 }

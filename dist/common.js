@@ -21,17 +21,17 @@ export class Form extends NamedDiv {
     }
 }
 export class NumberBar extends NamedDiv {
-    constructor(name, min, value, max, log = false, fractionDigits = 1, otherClasses = []) {
+    constructor(name, min, value, max, log = false, fractionDigits = 3, isStatic = false, otherClasses = []) {
         super(name, 'number bar', otherClasses);
         this.min = min;
         this.value = value;
         this.max = max;
         this.log = log;
         this.fractionDigits = fractionDigits;
+        this.isStatic = isStatic;
         this.valEle = new Div(['value']);
         this.track = new Div(['track']);
         this.bar = new Div(['bar']);
-        this.activePart = new Div(['active']);
         this.inputListeners = [];
         if (log) {
             this.min = Math.log(min);
@@ -39,9 +39,12 @@ export class NumberBar extends NamedDiv {
             this.max = Math.log(max);
         }
         this
-            .append(this.track.append(this.bar.append(this.activePart)))
+            .append(this.track.append(this.bar))
             .append(this.valEle);
         this.track.addEventListener('click', async (e) => {
+            if (isStatic) {
+                return;
+            }
             const rate = e.offsetX / this.track.element.offsetWidth;
             this.value = this.min + (this.max - this.min) * rate;
             this.renderBar();
@@ -50,6 +53,16 @@ export class NumberBar extends NamedDiv {
                 await this.inputListeners[i](val);
             }
         });
+        this.renderBar();
+    }
+    setMin(min) {
+        if (this.log) {
+            min = Math.log(min);
+        }
+        if (min > this.value || !isFinite(min)) {
+            min = this.value;
+        }
+        this.min = min;
         this.renderBar();
     }
     setValue(value) {
@@ -65,9 +78,24 @@ export class NumberBar extends NamedDiv {
         this.value = value;
         this.renderBar();
     }
+    setMax(max) {
+        if (this.log) {
+            max = Math.log(max);
+        }
+        if (max < this.value || !isFinite(max)) {
+            max = this.value;
+        }
+        this.max = max;
+        this.renderBar();
+    }
     renderBar() {
-        this.activePart.style.width = this.getRate() * 100 + '%';
-        this.valEle.setText((this.log ? Math.exp(this.value) : this.value).toFixed(this.fractionDigits));
+        const p = this.getRate() * 100 + '%';
+        this.bar.style.background = `linear-gradient(to right, var(--color-variable) ${p}, var(--color-area) ${p})`;
+        this.renderValue();
+    }
+    renderValue() {
+        const p = Math.pow(10, this.fractionDigits);
+        this.valEle.setText((Math.round((this.log ? Math.exp(this.value) : this.value) * p) / p).toString());
     }
     getRate() {
         if (this.max <= this.min) {
@@ -76,20 +104,32 @@ export class NumberBar extends NamedDiv {
         return (this.value - this.min) / (this.max - this.min);
     }
 }
-export class TimeBar extends NumberBar {
-    constructor(name, duration = 0, otherClasses = []) {
-        super(name, 0, 0, duration, false, 1, otherClasses);
+export class DataBar extends NumberBar {
+    constructor(name, used, quota, isStatic = false, otherClasses = []) {
+        super(name, 0, used, quota, false, 0, isStatic, otherClasses);
     }
-    renderBar() {
-        this.activePart.style.width = this.getRate() * 100 + '%';
-        this.valEle.setText(TimeBar.prettyTime(this.value) + '/' + TimeBar.prettyTime(this.max));
+    renderValue() {
+        this.valEle.setText(DataBar.prettyData(this.value) + ' / ' + DataBar.prettyData(this.max));
     }
-    setDuration(duration) {
-        if (duration < this.value || !isFinite(duration)) {
-            duration = this.value;
+    static prettyData(number) {
+        if (number < 1024) {
+            return number + ' B';
         }
-        this.max = duration;
-        this.renderBar();
+        if (number < 1024 * 1024) {
+            return number / 1024 + ' KiB';
+        }
+        if (number < 1024 * 1024 * 1024) {
+            return Math.round(number / 1024 / 1024 * 1000) / 1000 + ' MiB';
+        }
+        return Math.round(number / 1024 / 1024 / 1024 * 1000) / 1000 + ' GiB';
+    }
+}
+export class TimeBar extends NumberBar {
+    constructor(name, duration = 0, isStatic = false, otherClasses = []) {
+        super(name, 0, 0, duration, false, 0, isStatic, otherClasses);
+    }
+    renderValue() {
+        this.valEle.setText(TimeBar.prettyTime(this.value) + '/' + TimeBar.prettyTime(this.max));
     }
     static prettyTime(time) {
         const m = Math.floor((time % 3600) / 60).toString().padStart(2, '0');
