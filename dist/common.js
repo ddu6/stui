@@ -116,7 +116,7 @@ export class DataBar extends NumberBar {
             return number + ' B';
         }
         if (number < 1024 * 1024) {
-            return number / 1024 + ' KiB';
+            return Math.round(number / 1024 * 1000) / 1000 + ' KiB';
         }
         if (number < 1024 * 1024 * 1024) {
             return Math.round(number / 1024 / 1024 * 1000) / 1000 + ' MiB';
