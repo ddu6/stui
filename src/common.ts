@@ -126,13 +126,13 @@ export class DataBar extends NumberBar{
         if(number<1024){
             return number+' B'
         }
-        if(number<1024*1024){
-            return Math.round(number/1024*1000)/1000+' KiB'
+        if(number<1048576){
+            return Math.round(number/1.024)/1000+' KiB'
         }
-        if(number<1024*1024*1024){
-            return Math.round(number/1024/1024*1000)/1000+' MiB'
+        if(number<1073741824){
+            return Math.round(number/1048.576)/1000+' MiB'
         }
-        return Math.round(number/1024/1024/1024*1000)/1000+' GiB'
+        return Math.round(number/1073741.824)/1000+' GiB'
     }
 }
 export class TimeBar extends NumberBar{
