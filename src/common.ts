@@ -122,7 +122,7 @@ export class NumberBar extends NamedDiv{
     }
 }
 export class DataBar extends NumberBar{
-    constructor(name:string,used:number,quota:number,isStatic=false,otherClasses:string[]=[]){
+    constructor(name:string,used=0,quota=0,isStatic=false,otherClasses:string[]=[]){
         super(name,0,used,quota,false,0,isStatic,otherClasses)
     }
     protected renderValue(){
@@ -142,8 +142,8 @@ export class DataBar extends NumberBar{
     }
 }
 export class TimeBar extends NumberBar{
-    constructor(name:string,duration=0,isStatic=false,otherClasses:string[]=[]){
-        super(name,0,0,duration,false,0,isStatic,otherClasses)
+    constructor(name:string,passed=0,duration=0,isStatic=false,otherClasses:string[]=[]){
+        super(name,0,passed,duration,false,0,isStatic,otherClasses)
     }
     protected renderValue(){
         this.valEle.setText(TimeBar.prettyTime(this.value)+'/'+TimeBar.prettyTime(this.max))

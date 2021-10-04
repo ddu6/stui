@@ -111,7 +111,7 @@ export class NumberBar extends NamedDiv {
     }
 }
 export class DataBar extends NumberBar {
-    constructor(name, used, quota, isStatic = false, otherClasses = []) {
+    constructor(name, used = 0, quota = 0, isStatic = false, otherClasses = []) {
         super(name, 0, used, quota, false, 0, isStatic, otherClasses);
     }
     renderValue() {
@@ -131,8 +131,8 @@ export class DataBar extends NumberBar {
     }
 }
 export class TimeBar extends NumberBar {
-    constructor(name, duration = 0, isStatic = false, otherClasses = []) {
-        super(name, 0, 0, duration, false, 0, isStatic, otherClasses);
+    constructor(name, passed = 0, duration = 0, isStatic = false, otherClasses = []) {
+        super(name, 0, passed, duration, false, 0, isStatic, otherClasses);
     }
     renderValue() {
         this.valEle.setText(TimeBar.prettyTime(this.value) + '/' + TimeBar.prettyTime(this.max));

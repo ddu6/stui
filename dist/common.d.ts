@@ -33,12 +33,12 @@ export declare class NumberBar extends NamedDiv {
     getValue(): number;
 }
 export declare class DataBar extends NumberBar {
-    constructor(name: string, used: number, quota: number, isStatic?: boolean, otherClasses?: string[]);
+    constructor(name: string, used?: number, quota?: number, isStatic?: boolean, otherClasses?: string[]);
     protected renderValue(): void;
     static prettyData(number: number): string;
 }
 export declare class TimeBar extends NumberBar {
-    constructor(name: string, duration?: number, isStatic?: boolean, otherClasses?: string[]);
+    constructor(name: string, passed?: number, duration?: number, isStatic?: boolean, otherClasses?: string[]);
     protected renderValue(): void;
     static prettyTime(time: number): string;
 }

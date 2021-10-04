@@ -15,8 +15,8 @@ html {
     --color-bg: white;
     --color-area: whitesmoke;
     --color-pre: #f6f8fa;
-    --color-slice: rgba(211, 211, 211, 0.5);
-    --color-selection: rgba(135, 206, 235, 0.5);
+    --color-slice: rgba(211, 211, 211, .5);
+    --color-selection: rgba(135, 206, 235, .5);
     --color-span: rgba(27, 31, 35, .05);
     --font: ui-sans-serif, "Segoe UI", Helvetica, Arial, "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
     --font-mono: ui-monospace, "SF Mono", Consolas, monospace, "Segoe UI", Helvetica, Arial, "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -67,9 +67,9 @@ html[data-color-scheme=dark] {
     --color-bg: #131313;
     --color-area: #161616;
     --color-pre: #191b1d;
-    --color-slice: rgba(88, 88, 88, 0.5);
-    --color-selection: rgba(95, 144, 163, 0.5);
-    --color-span: rgba(58, 61, 65, 0.5);
+    --color-slice: rgba(88, 88, 88, .5);
+    --color-selection: rgba(95, 144, 163, .5);
+    --color-span: rgba(58, 61, 65, .5);
 }
 
 html[data-color-scheme=dark] .dark{
@@ -97,9 +97,9 @@ html[data-color-scheme=dark] .invert{
         --color-bg: #131313;
         --color-area: #161616;
         --color-pre: #191b1d;
-        --color-slice: rgba(88, 88, 88, 0.5);
-        --color-selection: rgba(95, 144, 163, 0.5);
-        --color-span: rgba(58, 61, 65, 0.5);
+        --color-slice: rgba(88, 88, 88, .5);
+        --color-selection: rgba(95, 144, 163, .5);
+        --color-span: rgba(58, 61, 65, .5);
     }
 
     html:not([data-color-scheme=light]) .dark{
