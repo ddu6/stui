@@ -30,6 +30,7 @@ export declare class NumberBar extends NamedDiv {
     protected renderBar(): void;
     protected renderValue(): void;
     getRate(): number;
+    getValue(): number;
 }
 export declare class DataBar extends NumberBar {
     constructor(name: string, used: number, quota: number, isStatic?: boolean, otherClasses?: string[]);

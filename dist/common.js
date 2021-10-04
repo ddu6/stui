@@ -103,6 +103,12 @@ export class NumberBar extends NamedDiv {
         }
         return (this.value - this.min) / (this.max - this.min);
     }
+    getValue() {
+        if (this.log) {
+            return Math.exp(this.value);
+        }
+        return this.value;
+    }
 }
 export class DataBar extends NumberBar {
     constructor(name, used, quota, isStatic = false, otherClasses = []) {
