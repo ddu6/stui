@@ -1,7 +1,6 @@
 import { Div } from "./common"
 import { st_circle_png } from "./lib/imgs"
-import { all as allIcons } from './lib/icons'
-import { all as allCSS } from "./lib/css"
+import { all } from "./lib/css"
 
 export class Shell extends Div{
     readonly styleEle=document.createElement('style')
@@ -18,7 +17,7 @@ export class Shell extends Div{
             document.title=title
         }
         document.body.style.margin="0"
-        this.styleEle.textContent=allIcons+allCSS+customCSS
+        this.styleEle.textContent=all+customCSS
         document.body.append(this.styleEle)
         document.body.append(this.element)
     }

@@ -1,3 +1,8 @@
+/* icon */
+.show-icon:not(:empty)::before {
+    padding-right: var(--length-space);
+}
+
 /* checkbox */
 .checkbox {
     display: inline-block;
@@ -23,8 +28,6 @@
     background-color: var(--color-slice);
 }
 
-.button.show-icon:not(:empty)::before,
-.checkbox.show-icon:not(:empty)::before,
 .button.show-icon.show-name::before,
 .checkbox.show-icon.show-name::before {
     padding-right: var(--length-space);
