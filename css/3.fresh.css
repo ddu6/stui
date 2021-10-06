@@ -5,7 +5,6 @@
 
 /* checkbox */
 .checkbox {
-    display: inline-block;
     min-width: 1em;
     color: var(--color-light);
     cursor: pointer;
