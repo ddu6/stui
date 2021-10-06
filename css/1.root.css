@@ -227,13 +227,6 @@ body>.lr-struct.sashing>.side>.sash {
     background-color: var(--color-slice);
 }
 
-body>.lr-struct>.side>.content {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    overflow: auto;
-}
-
 body>.lr-struct>.side>.content.vanished {
     display: none;
 }
