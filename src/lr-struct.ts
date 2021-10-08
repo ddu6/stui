@@ -90,8 +90,8 @@ export class LRStruct extends Shell{
             }
             this.sashing=false
             this.element.classList.remove('sashing')
-            for(let i=0;i<this.sashListeners.length;i++){
-                await this.sashListeners[i]()
+            for(const listener of this.sashListeners){
+                await listener()
             }
         })
         document.addEventListener('touchend',async ()=>{
@@ -100,8 +100,8 @@ export class LRStruct extends Shell{
             }
             this.sashing=false
             this.element.classList.remove('sashing')
-            for(let i=0;i<this.sashListeners.length;i++){
-                await this.sashListeners[i]()
+            for(const listener of this.sashListeners){
+                await listener()
             }
         })
     }

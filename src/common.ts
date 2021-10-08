@@ -55,8 +55,8 @@ export class NumberBar extends NamedDiv{
             this.value=this.min+(this.max-this.min)*rate
             this.renderBar()
             const val=this.log?Math.exp(this.value):this.value
-            for(let i=0;i<this.inputListeners.length;i++){
-                await this.inputListeners[i](val)
+            for(const listener of this.inputListeners){
+                await listener(val)
             }
         })
         this.renderBar()
@@ -103,7 +103,7 @@ export class NumberBar extends NamedDiv{
         this.valEle.setText(
             (
                 Math.round(
-                    (this.log?Math.exp(this.value):this.value)*p
+                    this.getValue()*p
                 )/p
             ).toString()
         )
