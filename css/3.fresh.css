@@ -92,6 +92,22 @@
 }
 
 /* hide */
+.collapse {
+    visibility: collapse;
+}
+
 .hide {
     display: none !important;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.translucent {
+    opacity: .5;
+}
+
+.transparent {
+    opacity: 0;
 }
