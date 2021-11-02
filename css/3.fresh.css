@@ -5,12 +5,12 @@
 
 /* checkbox */
 .checkbox {
-    min-width: 1em;
+    border-radius: var(--length-padding-span);
     color: var(--color-light);
     cursor: pointer;
-    padding: var(--length-padding-span);
-    border-radius: var(--length-padding-span);
     line-height: 1;
+    min-width: 1em;
+    padding: var(--length-padding-span);
     text-align: center;
 }
 
@@ -56,16 +56,16 @@
 
 .form-line[data-name]::before {
     display: block;
-    content: attr(data-name);
     color: var(--color-light);
+    content: attr(data-name);
     font-size: var(--length-font-log);
     text-transform: capitalize;
 }
 
 /* number bar */
 .number-bar {
-    display: flex;
     align-items: center;
+    display: flex;
     gap: var(--length-space);
 }
 
@@ -74,9 +74,9 @@
 }
 
 .number-bar>.track>.bar {
+    border-radius: 1px;
     height: 2px;
     margin: .5em 0;
-    border-radius: 1px;
 }
 
 .number-bar>.value {
@@ -85,8 +85,8 @@
 }
 
 .number-bar[data-name]:before {
-    content: attr(data-name);
     color: var(--color-light);
+    content: attr(data-name);
     font-size: var(--length-font-log);
     text-transform: capitalize;
 }

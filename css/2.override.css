@@ -28,12 +28,12 @@ a[href]:hover {
 
 /* blockquote */
 blockquote {
-    padding: 0px;
-    margin: 0px;
     border: 0px solid var(--color-border);
     border-left-width: 3px;
-    padding-left: var(--length-padding);
     color: var(--color-light);
+    margin: 0px;
+    padding: 0px;
+    padding-left: var(--length-padding);
 }
 
 /* button */
@@ -42,15 +42,15 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 .button {
-    font: inherit;
-    color: var(--color-text);
-    border-radius: var(--length-padding-span);
-    padding: var(--length-space) var(--length-padding);
     background-color: var(--color-slice);
     border: none;
-    outline: none;
-    text-align: center;
+    border-radius: var(--length-padding-span);
+    color: var(--color-text);
     cursor: pointer;
+    font: inherit;
+    outline: none;
+    padding: var(--length-space) var(--length-padding);
+    text-align: center;
 }
 
 button:hover,
@@ -70,23 +70,23 @@ input[type="submit"].pushing,
 code,
 pre,
 samp {
-    white-space: pre-wrap;
-    tab-size: 4;
     font-family: var(--font-mono);
+    tab-size: 4;
+    white-space: pre-wrap;
 }
 
 code {
+    background-color: var(--color-span);
+    border-radius: var(--length-padding-span);
     font-size: var(--length-font-span);
     padding: 0 var(--length-padding-span);
-    border-radius: var(--length-padding-span);
-    background-color: var(--color-span);
 }
 
 pre code {
+    background-color: transparent;
+    border-radius: 0;
     font: inherit;
     padding: 0;
-    border-radius: 0;
-    background-color: transparent;
 }
 
 /* details */
@@ -96,9 +96,9 @@ summary {
 
 /* fieldset */
 fieldset {
+    border: 1px solid var(--color-border);
     margin: 0;
     padding: var(--length-padding);
-    border: 1px solid var(--color-border);
 }
 
 legend {
@@ -107,8 +107,8 @@ legend {
 
 /* figure */
 figure {
-    text-align: center;
     margin: var(--length-space) 0;
+    text-align: center;
 }
 
 figcaption {
@@ -122,14 +122,14 @@ h3,
 h4,
 h5,
 h6 {
-    margin: var(--length-gap) 0;
     font: inherit;
+    margin: var(--length-gap) 0;
 }
 
 h1,
 h2 {
-    padding-bottom: var(--length-padding-circle);
     border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--length-padding-circle);
 }
 
 h1 {
@@ -158,16 +158,16 @@ h6 {
 
 /* hr */
 hr {
-    height: 3px;
-    margin: var(--length-gap) 0;
     background-color: var(--color-border);
     border: 0;
+    height: 3px;
+    margin: var(--length-gap) 0;
 }
 
 hr::after {
+    clear: both;
     content: "";
     display: flow-root;
-    clear: both;
 }
 
 /* img */
@@ -179,15 +179,15 @@ img {
 input,
 select,
 textarea {
-    font: inherit;
-    color: var(--color-text);
-    padding: 0 var(--length-padding-circle);
-    margin: 0;
     background-color: transparent;
     border: 1px solid var(--color-border);
-    outline: none;
     border-radius: var(--length-padding-span);
     box-sizing: content-box;
+    color: var(--color-text);
+    font: inherit;
+    margin: 0;
+    outline: none;
+    padding: 0 var(--length-padding-circle);
 }
 
 input:focus,
@@ -197,29 +197,28 @@ textarea:focus {
 }
 
 select {
-    appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
+    appearance: none;
 }
 
 input[type=number],
 input[type=date] {
-    appearance: textfield;
     -webkit-appearance: textfield;
     -moz-appearance: textfield;
+    appearance: textfield;
 }
 
 input[type=date] {
-    height: auto;
-    width: auto;
-    vertical-align: middle;
     height: calc(var(--number-ratio-line) * 1em);
+    vertical-align: middle;
+    width: auto;
 }
 
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button,
 input[type=date]::-webkit-calendar-picker-indicator,
-input[type=date]::-webkit-clear-button { 
+input[type=search]::-webkit-clear-button { 
     opacity: 0;
 }
 
@@ -232,41 +231,41 @@ option {
 }
 
 textarea {
-    resize: none;
     height: calc(var(--number-ratio-line) * 5em);
+    resize: none;
 }
 
 /* kbd */
 kbd {
-    display: inline-block;
-    padding: var(--length-padding-circle);
-    font-size: var(--length-font-circle);
-    line-height: 1;
     border: 1px solid var(--color-border);
     border-radius: var(--length-padding-span);
     box-shadow: inset 0 -1px 0 var(--color-border);
+    display: inline-block;
     font-family: var(--font-mono);
+    font-size: var(--length-font-circle);
+    line-height: 1;
+    padding: var(--length-padding-circle);
 }
 
 /* l */
 ol {
-    list-style: decimal
+    list-style: decimal;
 }
 
 ul {
-    list-style: disc
+    list-style: disc;
 }
 
 ol ol,
 ul ol {
-    list-style-type: lower-roman
+    list-style-type: lower-roman;
 }
 
 ol ol ol,
 ol ul ol,
 ul ol ol,
 ul ul ol {
-    list-style-type: lower-alpha
+    list-style-type: lower-alpha;
 }
 
 ol,
@@ -299,14 +298,11 @@ p {
 
 /* pre */
 pre {
-    display: table;
-    width: 100%;
-    box-sizing: border-box;
-    margin: var(--length-gap) 0;
-    font-size: var(--length-font-span);
-    padding: var(--length-padding);
-    border-radius: var(--length-padding);
     background-color: var(--color-pre);
+    border-radius: var(--length-padding);
+    font-size: var(--length-font-span);
+    margin: var(--length-gap) 0;
+    padding: var(--length-padding);
 }
 
 /* table */
@@ -318,8 +314,8 @@ table {
 
 td,
 th {
-    padding: var(--length-gap);
     border: 1px solid var(--color-border);
+    padding: var(--length-gap);
 }
 
 th {
