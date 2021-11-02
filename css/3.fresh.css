@@ -111,3 +111,8 @@
 .transparent {
     opacity: 0;
 }
+
+/* warn */
+.warn {
+    color: var(--color-warn);
+}
