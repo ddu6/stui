@@ -159,21 +159,21 @@ body>.lr-struct {
     position: relative;
 }
 
-body>.lr-struct>.main {
+body>.lr-struct>main {
     box-sizing: border-box;
     flex-grow: 1;
     margin-left: var(--length-width-side);
     width: 100%;
 }
 
-body>.lr-struct>.button {
+body>.lr-struct>button {
     display: none;
     left: 0;
     position: fixed;
     top: 0;
 }
 
-body>.lr-struct>.side {
+body>.lr-struct>aside {
     background-color: var(--color-pre);
     border-right: 1px solid var(--color-border);
     box-sizing: border-box;
@@ -186,24 +186,24 @@ body>.lr-struct>.side {
 }
 
 @media screen and (max-width:960px) {
-    body>.lr-struct>.side:not(.active) {
+    body>.lr-struct>aside:not(.active) {
         display: none;
     }
 
-    body>.lr-struct>.button {
+    body>.lr-struct>button {
         display: block;
     }
 
-    body>.lr-struct>.main {
+    body>.lr-struct>main {
         margin-left: 0 !important;
     }
 }
 
-body>.lr-struct>.side>.cover {
+body>.lr-struct>aside>.cover {
     display: none;
 }
 
-body>.lr-struct.sashing>.side>.cover {
+body>.lr-struct.sashing>aside>.cover {
     cursor: ew-resize;
     display: block;
     height: 100%;
@@ -213,7 +213,7 @@ body>.lr-struct.sashing>.side>.cover {
     width: 100vw;
 }
 
-body>.lr-struct>.side>.sash {
+body>.lr-struct>aside>.sash {
     cursor: ew-resize;
     height: 100%;
     position: absolute;
@@ -222,11 +222,11 @@ body>.lr-struct>.side>.sash {
     width: 10px;
 }
 
-body>.lr-struct.sashing>.side>.sash {
+body>.lr-struct.sashing>aside>.sash {
     background-color: var(--color-slice);
 }
 
-body>.lr-struct>.side>.content.vanished {
+body>.lr-struct>aside>.content.vanished {
     display: none;
 }
 
@@ -235,12 +235,12 @@ body>.lr-struct>.side>.content.vanished {
         min-height: 0;
     }
 
-    body>.lr-struct>.main {
+    body>.lr-struct>main {
         margin-left: 0 !important;
     }
 
-    body>.lr-struct>.side,
-    body>.lr-struct>.button {
+    body>.lr-struct>aside,
+    body>.lr-struct>button {
         display: none;
     }
 }

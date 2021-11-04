@@ -1,9 +1,9 @@
-import { Div, NamedDiv } from 'stce';
+import { Div, NamedDiv, NamedButton } from 'stce';
 export * from 'stce';
 export declare class Checkbox extends NamedDiv {
     constructor(name: string, otherClasses?: string[]);
 }
-export declare class Button extends NamedDiv {
+export declare class Button extends NamedButton {
     constructor(name: string, otherClasses?: string[]);
 }
 export declare class FormLine extends NamedDiv {

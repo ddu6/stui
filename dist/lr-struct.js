@@ -1,13 +1,14 @@
 import { SimpleTouch } from "./touch";
 import { Button, Div } from "./common";
 import { Shell } from "./shell";
+import { CommonEle } from "stce";
 export class LRStruct extends Shell {
     constructor(title = '', icon = '', customCSS = '', otherClasses = []) {
         super(title, icon, customCSS, ['lr struct'].concat(otherClasses));
-        this.side = new Div(['side']);
+        this.side = new CommonEle('aside', ['side']);
         this.button = new Button('menu');
         this.sideContent = new Div(['content']);
-        this.main = new Div(['main']);
+        this.main = new CommonEle('main', ['main']);
         this.sash = new Div(['sash']);
         this.cover = new Div(['cover']);
         this.sashing = false;
@@ -24,7 +25,7 @@ export class LRStruct extends Shell {
         this.button.addEventListener('click', () => {
             this.side.classList.add('active');
         });
-        this.main.addEventListener('click', () => {
+        this.main.element.addEventListener('click', () => {
             this.side.classList.remove('active');
         });
         this.sash.addEventListener('mousedown', e => {

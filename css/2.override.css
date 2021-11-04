@@ -40,8 +40,7 @@ blockquote {
 button,
 input[type="button"],
 input[type="reset"],
-input[type="submit"],
-.button {
+input[type="submit"] {
     background-color: var(--color-slice);
     border: none;
     border-radius: var(--length-padding-span);
@@ -57,12 +56,10 @@ button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover,
-.button:hover,
 button.pushing,
 input[type="button"].pushing,
 input[type="reset"].pushing,
-input[type="submit"].pushing,
-.button.pushing {
+input[type="submit"].pushing {
     background-color: var(--color-selection);
 }
 

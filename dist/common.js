@@ -1,11 +1,11 @@
-import { Div, NamedDiv } from 'stce';
+import { Div, NamedDiv, NamedButton } from 'stce';
 export * from 'stce';
 export class Checkbox extends NamedDiv {
     constructor(name, otherClasses = []) {
         super(name, 'checkbox', ['show icon'].concat(otherClasses));
     }
 }
-export class Button extends NamedDiv {
+export class Button extends NamedButton {
     constructor(name, otherClasses = []) {
         super(name, 'button', ['show icon'].concat(otherClasses));
     }

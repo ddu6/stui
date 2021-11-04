@@ -27,12 +27,12 @@
     background-color: var(--color-slice);
 }
 
-.button.show-icon.show-name::before,
+button.show-icon.show-name::before,
 .checkbox.show-icon.show-name::before {
     padding-right: var(--length-space);
 }
 
-.button[data-name].show-name::after,
+button[data-name].show-name::after,
 .checkbox[data-name].show-name::after {
     content: attr(data-name);
     text-transform: capitalize;

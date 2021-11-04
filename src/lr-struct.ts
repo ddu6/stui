@@ -1,12 +1,13 @@
 import { SimpleTouch } from "./touch"
 import { Button, Div } from "./common"
 import { Shell } from "./shell"
+import { CommonEle } from "stce"
 
 export class LRStruct extends Shell{
-    readonly side=new Div(['side'])
+    readonly side=new CommonEle('aside',['side'])
     readonly button=new Button('menu')
     readonly sideContent=new Div(['content'])
-    readonly main=new Div(['main'])
+    readonly main=new CommonEle('main',['main'])
     readonly sash=new Div(['sash'])
     readonly cover=new Div(['cover'])
     sashing=false
@@ -28,7 +29,7 @@ export class LRStruct extends Shell{
         this.button.addEventListener('click',()=>{
             this.side.classList.add('active')
         })
-        this.main.addEventListener('click',()=>{
+        this.main.element.addEventListener('click',()=>{
             this.side.classList.remove('active')
         })
         this.sash.addEventListener('mousedown',e=>{
