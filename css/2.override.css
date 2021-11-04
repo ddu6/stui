@@ -327,3 +327,8 @@ tr:nth-child(even) {
 table>caption {
     margin: var(--length-space) 0;
 }
+
+/* iframe */
+iframe {
+    border: 0;
+}
