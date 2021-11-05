@@ -123,18 +123,16 @@ h6 {
     margin: var(--length-gap) 0;
 }
 
-h1,
-h2 {
-    border-bottom: 1px solid var(--color-border);
-    padding-bottom: var(--length-padding-circle);
-}
-
 h1 {
     font-size: var(--length-font-title);
+    margin: var(--length-padding) 0;
+    text-align: center;
 }
 
 h2 {
+    border-bottom: 1px solid var(--color-border);
     font-size: calc((var(--length-font-title) + var(--length-font-heading)) / 2);
+    padding-bottom: var(--length-padding-circle);
 }
 
 h3 {
