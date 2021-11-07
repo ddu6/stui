@@ -245,15 +245,10 @@ kbd {
 /* l */
 ol,
 ul {
-    margin: var(--length-gap) 0;
     padding-left: var(--length-tab);
 }
 
 li {
-    margin: var(--length-gap) 0;
-}
-
-dl {
     margin: var(--length-gap) 0;
 }
 
@@ -264,6 +259,7 @@ dd {
 
 dt {
     font-weight: bold;
+    margin: var(--length-gap) 0;
 }
 
 /* p */
