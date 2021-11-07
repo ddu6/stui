@@ -243,26 +243,6 @@ kbd {
 }
 
 /* l */
-ol {
-    list-style: decimal;
-}
-
-ul {
-    list-style: disc;
-}
-
-ol ol,
-ul ol {
-    list-style-type: lower-roman;
-}
-
-ol ol ol,
-ol ul ol,
-ul ol ol,
-ul ul ol {
-    list-style-type: lower-alpha;
-}
-
 ol,
 ul {
     margin: var(--length-gap) 0;
