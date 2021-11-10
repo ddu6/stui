@@ -258,7 +258,6 @@ dd {
 }
 
 dt {
-    font-weight: bold;
     margin: var(--length-gap) 0;
 }
 
