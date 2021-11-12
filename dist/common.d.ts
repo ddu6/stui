@@ -25,6 +25,7 @@ export declare class NumberBar extends NamedDiv {
     inputListeners: ((value: number) => Promise<void>)[];
     constructor(name: string, min: number, value: number, max: number, log?: boolean, fractionDigits?: number, isStatic?: boolean, otherClasses?: string[]);
     setMin(min: number): void;
+    protected setInnerValue(value: number): Promise<void>;
     setValue(value: number): Promise<void>;
     setMax(max: number): void;
     protected renderBar(): void;
