@@ -45,7 +45,9 @@ export class NumberBar extends NamedDiv {
             if (isStatic) {
                 return;
             }
-            await this.setInnerValue(this.min + (this.max - this.min) * (e.offsetX / this.track.element.offsetWidth));
+            this.value = this.min + (this.max - this.min) * (e.offsetX / this.track.element.offsetWidth);
+            this.renderBar();
+            await this.listen();
         });
         this.renderBar();
     }
@@ -59,14 +61,16 @@ export class NumberBar extends NamedDiv {
         this.min = min;
         this.renderBar();
     }
-    async setInnerValue(value) {
-        this.value = value;
-        this.renderBar();
+    async listen() {
         for (const listener of this.inputListeners) {
             await listener(this.getValue());
         }
     }
-    async setValue(value) {
+    async inputValue(value) {
+        this.setValue(value);
+        await this.listen();
+    }
+    setValue(value) {
         value = this.log ? Math.log(value) : value;
         if (value < this.min || !isFinite(value)) {
             value = this.min;
@@ -74,7 +78,8 @@ export class NumberBar extends NamedDiv {
         else if (value > this.max) {
             value = this.max;
         }
-        await this.setInnerValue(value);
+        this.value = value;
+        this.renderBar();
     }
     setMax(max) {
         if (this.log) {
