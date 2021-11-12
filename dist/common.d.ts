@@ -24,15 +24,16 @@ export declare class NumberBar extends NamedDiv {
     readonly bar: Div;
     inputListeners: ((value: number) => Promise<void>)[];
     constructor(name: string, min: number, value: number, max: number, log?: boolean, fractionDigits?: number, isStatic?: boolean, otherClasses?: string[]);
-    setMin(min: number): void;
-    listen(): Promise<void>;
-    inputValue(value: number): Promise<void>;
-    setValue(value: number): void;
-    setMax(max: number): void;
     protected renderBar(): void;
     protected renderValue(): void;
+    listen(): Promise<void>;
+    setMin(min: number): void;
+    setValue(value: number): void;
+    setMax(max: number): void;
     getRate(): number;
     getValue(): number;
+    inputValue(value: number): Promise<void>;
+    changeValue(delta: number): Promise<void>;
 }
 export declare class DataBar extends NumberBar {
     constructor(name: string, used?: number, quota?: number, isStatic?: boolean, otherClasses?: string[]);

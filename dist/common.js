@@ -51,6 +51,20 @@ export class NumberBar extends NamedDiv {
         });
         this.renderBar();
     }
+    renderBar() {
+        const p = this.getRate() * 100 + '%';
+        this.bar.style.background = `linear-gradient(to right, var(--color-variable) ${p}, var(--color-area) ${p})`;
+        this.renderValue();
+    }
+    renderValue() {
+        const p = Math.pow(10, this.fractionDigits);
+        this.valEle.setText((Math.round(this.getValue() * p) / p).toString());
+    }
+    async listen() {
+        for (const listener of this.inputListeners) {
+            await listener(this.getValue());
+        }
+    }
     setMin(min) {
         if (this.log) {
             min = Math.log(min);
@@ -60,15 +74,6 @@ export class NumberBar extends NamedDiv {
         }
         this.min = min;
         this.renderBar();
-    }
-    async listen() {
-        for (const listener of this.inputListeners) {
-            await listener(this.getValue());
-        }
-    }
-    async inputValue(value) {
-        this.setValue(value);
-        await this.listen();
     }
     setValue(value) {
         value = this.log ? Math.log(value) : value;
@@ -91,15 +96,6 @@ export class NumberBar extends NamedDiv {
         this.max = max;
         this.renderBar();
     }
-    renderBar() {
-        const p = this.getRate() * 100 + '%';
-        this.bar.style.background = `linear-gradient(to right, var(--color-variable) ${p}, var(--color-area) ${p})`;
-        this.renderValue();
-    }
-    renderValue() {
-        const p = Math.pow(10, this.fractionDigits);
-        this.valEle.setText((Math.round(this.getValue() * p) / p).toString());
-    }
     getRate() {
         if (this.max <= this.min) {
             return 0;
@@ -108,6 +104,13 @@ export class NumberBar extends NamedDiv {
     }
     getValue() {
         return this.log ? Math.exp(this.value) : this.value;
+    }
+    async inputValue(value) {
+        this.setValue(value);
+        await this.listen();
+    }
+    async changeValue(delta) {
+        await this.inputValue(this.getValue() + delta);
     }
 }
 export class DataBar extends NumberBar {
