@@ -1,6 +1,6 @@
-import { Button, Div } from "./common";
-import { Shell } from "./shell";
-import { CommonEle } from "stce";
+import { Button, Div } from './common';
+import { Shell } from './shell';
+import { CommonEle } from 'stce';
 export declare class LRStruct extends Shell {
     readonly side: CommonEle<"aside">;
     readonly button: Button;

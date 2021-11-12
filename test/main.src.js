@@ -1,2 +1,4 @@
 import {LRStruct} from '../dist/mod.js'
-window.lrStruct=new LRStruct('Test')
+const lrStruct=window.lrStruct=new LRStruct('Test')
+document.body.append(lrStruct.styleEle)
+document.body.append(lrStruct.element)

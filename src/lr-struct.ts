@@ -1,7 +1,7 @@
-import { SimpleTouch } from "./touch"
-import { Button, Div } from "./common"
-import { Shell } from "./shell"
-import { CommonEle } from "stce"
+import {SimpleTouch} from './touch'
+import {Button,Div} from './common'
+import {Shell} from './shell'
+import {CommonEle} from 'stce'
 
 export class LRStruct extends Shell{
     readonly side=new CommonEle('aside',['side'])
