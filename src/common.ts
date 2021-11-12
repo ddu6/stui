@@ -54,9 +54,9 @@ export class NumberBar extends NamedDiv{
             const rate=e.offsetX/this.track.element.offsetWidth
             this.value=this.min+(this.max-this.min)*rate
             this.renderBar()
-            const val=this.log?Math.exp(this.value):this.value
+            const value=this.getValue()
             for(const listener of this.inputListeners){
-                await listener(val)
+                await listener(value)
             }
         })
         this.renderBar()
@@ -71,17 +71,18 @@ export class NumberBar extends NamedDiv{
         this.min=min
         this.renderBar()
     }
-    setValue(value:number){
-        if(this.log){
-            value=Math.log(value)
+    async setValue(value:number){
+        let innerValue=this.log?Math.log(value):value
+        if(innerValue<this.min||!isFinite(innerValue)){
+            innerValue=this.min
+        }else if(innerValue>this.max){
+            innerValue=this.max
         }
-        if(value<this.min||!isFinite(value)){
-            value=this.min
-        }else if(value>this.max){
-            value=this.max
-        }
-        this.value=value
+        this.value=innerValue
         this.renderBar()
+        for(const listener of this.inputListeners){
+            await listener(value)
+        }
     }
     setMax(max:number){
         if(this.log){
@@ -115,10 +116,7 @@ export class NumberBar extends NamedDiv{
         return (this.value-this.min)/(this.max-this.min)
     }
     getValue(){
-        if(this.log){
-            return Math.exp(this.value)
-        }
-        return this.value
+        return this.log?Math.exp(this.value):this.value
     }
 }
 export class DataBar extends NumberBar{
