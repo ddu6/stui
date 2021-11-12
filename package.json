@@ -10,12 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/st-org/stui.git"
   },
-  "author": "ddu6",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/st-org/stui/issues"
-  },
-  "homepage": "https://github.com/st-org/stui#readme",
   "devDependencies": {
     "@ddu6/pkg-tools": "^0.0.6",
     "@types/node": "^16.11.6",
