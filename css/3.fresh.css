@@ -5,12 +5,12 @@
 
 /* checkbox */
 .checkbox {
-    border-radius: var(--length-padding-span);
+    border-radius: var(--length-space);
     color: var(--color-light);
     cursor: pointer;
     line-height: 1;
     min-width: 1em;
-    padding: var(--length-padding-span);
+    padding: var(--length-space);
     text-align: center;
 }
 
