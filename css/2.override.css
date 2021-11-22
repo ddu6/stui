@@ -124,31 +124,21 @@ h6 {
 }
 
 h1 {
-    font-size: var(--length-font-title);
-    margin: var(--length-padding) 0;
-    text-align: center;
-}
-
-h2 {
     border-bottom: 1px solid var(--color-border);
     font-size: calc((var(--length-font-title) + var(--length-font-heading)) / 2);
     padding-bottom: var(--length-space);
 }
 
-h3 {
+h2 {
     font-size: calc((var(--length-font-title) + var(--length-font-heading)) / 2);
 }
 
-h4 {
+h3 {
     font-size: var(--length-font-heading);
 }
 
-h5 {
+h4 {
     font-size: calc((1em + var(--length-font-heading)) / 2);
-}
-
-h6 {
-    font-size: 1em;
 }
 
 /* hr */
