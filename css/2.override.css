@@ -235,6 +235,7 @@ kbd {
 /* l */
 ol,
 ul {
+    margin: var(--length-gap) 0;
     padding-left: var(--length-tab);
 }
 
@@ -242,13 +243,12 @@ li {
     margin: var(--length-gap) 0;
 }
 
-dd {
-    margin: var(--length-gap) 0;
-    margin-left: var(--length-tab);
+dl {
+    margin: 0;
 }
 
-dt {
-    margin: var(--length-gap) 0;
+dd {
+    margin-left: var(--length-tab);
 }
 
 /* p */
