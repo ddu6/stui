@@ -39,17 +39,15 @@ button[data-name].show-name::after,
 }
 
 /* form */
-.form>:not(:first-child) {
-    margin-top: var(--length-gap);
+.form>:not(:empty) {
+    margin: var(--length-gap) 0;
 }
 
-.form,
 .form-line {
     display: flex;
     flex-direction: column;
 }
 
-.form>*,
 .form-line>* {
     flex-shrink: 0;
 }
