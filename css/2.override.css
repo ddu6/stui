@@ -44,7 +44,7 @@ input[type="submit"] {
     background-color: var(--color-slice);
     border: none;
     border-radius: var(--length-space);
-    color: var(--color-text);
+    color: inherit;
     cursor: pointer;
     font: inherit;
     outline: none;
@@ -157,7 +157,6 @@ hr::after {
 
 /* img */
 img {
-    display: block;
     max-width: 100%;
 }
 
@@ -168,8 +167,7 @@ textarea {
     background-color: transparent;
     border: 1px solid var(--color-border);
     border-radius: var(--length-space);
-    box-sizing: content-box;
-    color: var(--color-text);
+    color: inherit;
     font: inherit;
     margin: 0;
     outline: none;
