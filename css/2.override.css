@@ -172,6 +172,7 @@ textarea {
     margin: 0;
     outline: none;
     padding: 0 var(--length-space);
+    padding-inline: 0;
 }
 
 input:focus,
@@ -202,7 +203,7 @@ input[type=date] {
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button,
 input[type=date]::-webkit-calendar-picker-indicator,
-input[type=search]::-webkit-clear-button { 
+input[type=search]::-webkit-search-cancel-button { 
     opacity: 0;
 }
 
