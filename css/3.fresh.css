@@ -39,7 +39,7 @@ button[data-name].show-name::after,
 }
 
 /* form */
-.form>:not(:empty) {
+.form>* {
     margin: var(--length-gap) 0;
 }
 
