@@ -148,6 +148,11 @@ html[data-color-scheme=dark] .invert{
     }
 }
 
+/* body */
+body {
+    margin: 0;
+}
+
 /* lrStruct */
 body>.lr-struct {
     display: flex;

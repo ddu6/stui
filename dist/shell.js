@@ -18,7 +18,6 @@ export class Shell extends Div {
         if (title.length > 0 && document.title.length === 0) {
             document.title = title;
         }
-        document.body.style.margin = '0';
         this.styleEle.textContent = all + customCSS;
     }
 }
