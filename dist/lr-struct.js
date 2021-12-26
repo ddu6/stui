@@ -94,6 +94,8 @@ export function createLRStruct() {
     document.addEventListener('touchend', end);
     return {
         element,
+        main,
+        sideContent,
         sashListeners
     };
 }
