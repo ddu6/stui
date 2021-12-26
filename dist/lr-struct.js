@@ -7,8 +7,7 @@ export function createLRStruct() {
     const sideContent = document.createElement('div');
     const sash = document.createElement('div');
     element.classList.add('lr-struct');
-    button.classList.add('show-icon');
-    button.classList.add('menu');
+    button.classList.add('show-icon', 'menu');
     sideContent.classList.add('content');
     sash.classList.add('sash');
     element.append(main);
