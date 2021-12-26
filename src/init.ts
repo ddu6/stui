@@ -14,12 +14,12 @@ export function init(options:InitOptions={}){
         meta.content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0'
         document.head.append(meta)
     }
+    const style=document.createElement('style')
+    style.textContent=all
+    document.head.append(style)
     if(options.css!==undefined){
         const style=document.createElement('style')
         style.textContent=options.css
-        document.head.prepend(style)
+        document.head.append(style)
     }
-    const style=document.createElement('style')
-    style.textContent=all
-    document.head.prepend(style)
 }
