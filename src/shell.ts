@@ -1,7 +1,6 @@
 import {Div} from './common'
 import {st_circle_png} from './lib/imgs'
 import {all} from './lib/css'
-
 export class Shell extends Div{
     readonly styleEle=document.createElement('style')
     constructor(title='',icon='',customCSS='',classes:string[]=[]){
