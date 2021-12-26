@@ -1,107 +1,100 @@
-import { SimpleTouch } from './touch';
-import { Button, Div } from './common';
-import { Shell } from './shell';
-import { CommonEle } from 'stce';
-export class LRStruct extends Shell {
-    constructor(title = '', icon = '', customCSS = '', otherClasses = []) {
-        super(title, icon, customCSS, ['lr struct'].concat(otherClasses));
-        this.side = new CommonEle('aside', ['side']);
-        this.button = new Button('menu');
-        this.sideContent = new Div(['content']);
-        this.main = new CommonEle('main', ['main']);
-        this.sash = new Div(['sash']);
-        this.cover = new Div(['cover']);
-        this.sashing = false;
-        this.sashX = 0;
-        this.sashListeners = [];
-        this
-            .append(this.main)
-            .append(this.button)
-            .append(this.side
-            .append(this.sideContent)
-            .append(this.cover)
-            .append(this.sash));
-        this.sideWidth = this.side.element.offsetWidth;
-        this.button.addEventListener('click', () => {
-            this.side.classList.add('active');
-        });
-        this.main.element.addEventListener('click', () => {
-            this.side.classList.remove('active');
-        });
-        this.sash.addEventListener('mousedown', e => {
+import { extractMainTouch } from './common';
+export function createLRStruct() {
+    const element = document.createElement('div');
+    const main = document.createElement('main');
+    const button = document.createElement('button');
+    const side = document.createElement('aside');
+    const sideContent = document.createElement('div');
+    const sash = document.createElement('div');
+    element.classList.add('lr-struct');
+    button.classList.add('show-icon');
+    button.classList.add('menu');
+    sideContent.classList.add('content');
+    sash.classList.add('sash');
+    element.append(main);
+    element.append(button);
+    element.append(side);
+    side.append(sideContent);
+    side.append(sash);
+    let sashing = false;
+    let sashX = 0;
+    let sideWidth = side.offsetWidth;
+    const sashListeners = [];
+    button.addEventListener('click', () => {
+        side.classList.add('active');
+    });
+    main.addEventListener('click', () => {
+        side.classList.remove('active');
+    });
+    sash.addEventListener('mousedown', e => {
+        e.preventDefault();
+        sashing = true;
+        sashX = e.clientX;
+        sideWidth = side.offsetWidth;
+        element.classList.add('sashing');
+    });
+    sash.addEventListener('touchstart', e => {
+        sashing = true;
+        const touch = extractMainTouch(e);
+        if (touch === undefined) {
+            return;
+        }
+        sashX = touch.clientX;
+        sideWidth = side.offsetWidth;
+        element.classList.add('sashing');
+    });
+    document.addEventListener('mousemove', e => {
+        if (!sashing) {
+            return;
+        }
+        e.preventDefault();
+        const dx = e.clientX - sashX;
+        const newWidth = Math.min(Math.max(sideWidth + dx, 30), element.offsetWidth);
+        side.style.width = newWidth + 'px';
+        main.style.marginLeft = side.offsetWidth + 'px';
+        if (side.offsetWidth <= 50) {
+            sideContent.classList.add('vanished');
+        }
+        else {
+            sideContent.classList.remove('vanished');
+        }
+    });
+    sash.addEventListener('touchmove', e => {
+        if (e.cancelable) {
             e.preventDefault();
-            this.sashing = true;
-            this.sashX = e.clientX;
-            this.sideWidth = this.side.element.offsetWidth;
-            this.element.classList.add('sashing');
-        });
-        this.sash.addEventListener('touchstart', e => {
-            this.sashing = true;
-            const touch = new SimpleTouch(e).targetTouch;
-            if (touch === undefined) {
-                return;
-            }
-            this.sashX = touch.clientX;
-            this.sideWidth = this.side.element.offsetWidth;
-            this.element.classList.add('sashing');
-        });
-        document.addEventListener('mousemove', e => {
-            if (!this.sashing) {
-                return;
-            }
-            e.preventDefault();
-            const dx = e.clientX - this.sashX;
-            const newWidth = Math.min(Math.max(this.sideWidth + dx, 30), this.element.offsetWidth);
-            this.side.style.width = newWidth + 'px';
-            this.main.style.marginLeft = this.side.element.offsetWidth + 'px';
-            if (this.side.element.offsetWidth <= 50) {
-                this.sideContent.classList.add('vanished');
-            }
-            else {
-                this.sideContent.classList.remove('vanished');
-            }
-        });
-        this.sash.addEventListener('touchmove', e => {
-            if (e.cancelable) {
-                e.preventDefault();
-            }
-            if (!this.sashing) {
-                return;
-            }
-            const touch = new SimpleTouch(e).targetTouch;
-            if (touch === undefined) {
-                return;
-            }
-            const dx = touch.clientX - this.sashX;
-            const newWidth = Math.min(Math.max(this.sideWidth + dx, 30), this.element.offsetWidth);
-            this.side.style.width = newWidth + 'px';
-            this.main.style.marginLeft = this.side.element.offsetWidth + 'px';
-            if (this.side.element.offsetWidth <= 50) {
-                this.sideContent.classList.add('vanished');
-            }
-            else {
-                this.sideContent.classList.remove('vanished');
-            }
-        });
-        document.addEventListener('mouseup', async () => {
-            if (this.sashing !== true) {
-                return;
-            }
-            this.sashing = false;
-            this.element.classList.remove('sashing');
-            for (const listener of this.sashListeners) {
-                await listener();
-            }
-        });
-        document.addEventListener('touchend', async () => {
-            if (this.sashing !== true) {
-                return;
-            }
-            this.sashing = false;
-            this.element.classList.remove('sashing');
-            for (const listener of this.sashListeners) {
-                await listener();
-            }
-        });
-    }
+        }
+        if (!sashing) {
+            return;
+        }
+        const touch = extractMainTouch(e);
+        if (touch === undefined) {
+            return;
+        }
+        const dx = touch.clientX - sashX;
+        const newWidth = Math.min(Math.max(sideWidth + dx, 30), element.offsetWidth);
+        side.style.width = newWidth + 'px';
+        main.style.marginLeft = side.offsetWidth + 'px';
+        if (side.offsetWidth <= 50) {
+            sideContent.classList.add('vanished');
+        }
+        else {
+            sideContent.classList.remove('vanished');
+        }
+    });
+    const end = async () => {
+        if (sashing !== true) {
+            return;
+        }
+        sashing = false;
+        element.classList.remove('sashing');
+        for (const listener of sashListeners) {
+            await listener();
+        }
+    };
+    document.addEventListener('mouseup', end);
+    document.addEventListener('touchend', end);
+    return {
+        element,
+        sashListeners
+    };
 }

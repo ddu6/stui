@@ -200,20 +200,6 @@ body>.lr-struct>aside {
     }
 }
 
-body>.lr-struct>aside>.cover {
-    display: none;
-}
-
-body>.lr-struct.sashing>aside>.cover {
-    cursor: ew-resize;
-    display: block;
-    height: 100%;
-    left: 0;
-    position: fixed;
-    top: 0;
-    width: 100vw;
-}
-
 body>.lr-struct>aside>.sash {
     cursor: ew-resize;
     height: 100%;
