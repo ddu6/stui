@@ -215,7 +215,7 @@ option {
 }
 
 textarea {
-    height: calc(var(--number-ratio-line) * 5em);
+    min-height: calc(var(--number-ratio-line) * 5em);
     resize: none;
 }
 

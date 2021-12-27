@@ -154,17 +154,9 @@ body {
 }
 
 /* lrStruct */
-body>.lr-struct {
-    display: flex;
-    min-height: 100vh;
-    position: relative;
-}
-
 body>.lr-struct>main {
     box-sizing: border-box;
-    flex-grow: 1;
     margin-left: var(--length-width-side);
-    width: 100%;
 }
 
 body>.lr-struct>button {
