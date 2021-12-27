@@ -1,16 +1,3 @@
-/* scroll */
-::-webkit-scrollbar {
-    background-color: transparent;
-}
-
-::-webkit-scrollbar-corner {
-    background-color: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: var(--color-slice);
-}
-
 /* a */
 a,
 a:hover {
@@ -182,21 +169,13 @@ textarea:focus {
 
 select {
     -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
 }
 
 input[type=number],
 input[type=date] {
     -webkit-appearance: textfield;
-    -moz-appearance: textfield;
     appearance: textfield;
-}
-
-input[type=date] {
-    height: calc(var(--number-ratio-line) * 1em);
-    vertical-align: middle;
-    width: auto;
 }
 
 input[type=number]::-webkit-inner-spin-button,

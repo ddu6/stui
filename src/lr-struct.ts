@@ -42,7 +42,7 @@ export function createLRStruct(){
         sideWidth=side.offsetWidth
         element.classList.add('sashing')
     })
-    document.addEventListener('mousemove',e=>{
+    addEventListener('mousemove',e=>{
         if(!sashing){
             return
         }
@@ -88,8 +88,8 @@ export function createLRStruct(){
             await listener()
         }
     }
-    document.addEventListener('mouseup',end)
-    document.addEventListener('touchend',end)
+    addEventListener('mouseup',end)
+    addEventListener('touchend',end)
     return {
         element,
         main,
