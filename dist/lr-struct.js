@@ -1,5 +1,6 @@
 import { extractMainTouch } from './common';
-export function createLRStruct() {
+export function createLRStruct(options) {
+    const root = options.root ?? window;
     const element = document.createElement('div');
     const main = document.createElement('main');
     const button = document.createElement('button');
@@ -42,7 +43,7 @@ export function createLRStruct() {
         sideWidth = side.offsetWidth;
         element.classList.add('sashing');
     });
-    addEventListener('mousemove', e => {
+    root.addEventListener('mousemove', e => {
         if (!sashing) {
             return;
         }
@@ -90,8 +91,8 @@ export function createLRStruct() {
             await listener();
         }
     };
-    addEventListener('mouseup', end);
-    addEventListener('touchend', end);
+    root.addEventListener('mouseup', end);
+    root.addEventListener('touchend', end);
     return {
         element,
         main,
