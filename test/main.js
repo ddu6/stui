@@ -1,3 +1,5 @@
 import {createLRStruct,init} from '../mod.js'
-init()
-document.body.append(createLRStruct().element)
+const root=open()
+root.document.documentElement.dataset.colorScheme='dark'
+init({root})
+root.document.body.append(createLRStruct({root}).element)

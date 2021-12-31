@@ -4,6 +4,7 @@ export interface LRStructOptions{
 }
 export function createLRStruct(options:LRStructOptions={}){
     const root=options.root??window
+    const {document}=root
     const element=document.createElement('div')
     const main=document.createElement('main')
     const button=document.createElement('button')

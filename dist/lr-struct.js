@@ -1,6 +1,7 @@
 import { extractMainTouch } from './common';
 export function createLRStruct(options = {}) {
     const root = options.root ?? window;
+    const { document } = root;
     const element = document.createElement('div');
     const main = document.createElement('main');
     const button = document.createElement('button');
