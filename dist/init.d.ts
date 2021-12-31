@@ -1,5 +1,5 @@
 export interface InitOptions {
     css?: string;
-    root?: Window;
+    window?: Window;
 }
 export declare function init(options?: InitOptions): void;

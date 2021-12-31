@@ -1,5 +1,5 @@
 export interface LRStructOptions {
-    root?: Window;
+    window?: Window;
 }
 export declare function createLRStruct(options?: LRStructOptions): {
     element: HTMLDivElement;
