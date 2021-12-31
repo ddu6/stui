@@ -2,7 +2,7 @@ import {extractMainTouch} from './common'
 export interface LRStructOptions{
     root?:Window
 }
-export function createLRStruct(options:LRStructOptions){
+export function createLRStruct(options:LRStructOptions={}){
     const root=options.root??window
     const element=document.createElement('div')
     const main=document.createElement('main')
