@@ -1,3 +1,3 @@
-import {createLRStruct,init} from '../mod.js'
+import {createLRStruct, init} from '../mod.js'
 init()
 document.body.append(createLRStruct().element)
