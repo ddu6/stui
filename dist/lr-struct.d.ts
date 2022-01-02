@@ -1,7 +1,4 @@
-export interface LRStructOptions {
-    window?: Window;
-}
-export declare function createLRStruct(options?: LRStructOptions): {
+export declare function createLRStruct(): {
     element: HTMLDivElement;
     main: HTMLElement;
     sideContent: HTMLDivElement;

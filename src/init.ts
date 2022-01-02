@@ -1,10 +1,8 @@
 import {all} from './lib/css'
 export interface InitOptions{
     css?:string
-    window?:Window
 }
 export function init(options:InitOptions={}){
-    const {document}=options.window??window
     if(document.head.querySelector('meta[charset]')===null){
         const meta=document.createElement('meta')
         meta.setAttribute('charset','utf8')

@@ -1,6 +1,5 @@
 import { all } from './lib/css';
 export function init(options = {}) {
-    const { document } = options.window ?? window;
     if (document.head.querySelector('meta[charset]') === null) {
         const meta = document.createElement('meta');
         meta.setAttribute('charset', 'utf8');
