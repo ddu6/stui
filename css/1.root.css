@@ -138,6 +138,7 @@ html {
     color: var(--color-text);
     font-family: var(--font);
     line-height: var(--number-ratio-line);
+    white-space: pre-wrap;
 }
 
 /* body */
