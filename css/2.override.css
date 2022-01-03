@@ -53,6 +53,7 @@ pre,
 samp {
     font-family: var(--font-mono);
     tab-size: 4;
+    white-space: pre-wrap;
 }
 
 code {
