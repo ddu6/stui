@@ -128,12 +128,6 @@ hr {
     margin: var(--length-gap) 0;
 }
 
-hr::after {
-    clear: both;
-    content: "";
-    display: flow-root;
-}
-
 /* img */
 img {
     max-width: 100%;
