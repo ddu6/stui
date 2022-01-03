@@ -138,7 +138,6 @@ html {
     color: var(--color-text);
     font-family: var(--font);
     line-height: var(--number-ratio-line);
-    white-space: pre-wrap;
 }
 
 /* body */
@@ -152,6 +151,7 @@ body>.lr-struct>main {
     display: flow-root;
     margin-left: var(--length-width-side);
     min-height: 100vh;
+    white-space: pre-wrap;
 }
 
 body>.lr-struct>button {
@@ -171,6 +171,7 @@ body>.lr-struct>aside {
     max-width: 90%;
     position: fixed;
     top: 0;
+    white-space: pre-wrap;
     width: var(--length-width-side);
 }
 
