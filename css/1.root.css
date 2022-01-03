@@ -220,7 +220,8 @@ body>.lr-struct>aside>.content.vanished {
 }
 
 /* print */
-* {
+html {
+    -webkit-print-color-adjust: exact;
     color-adjust: exact;
 }
 
