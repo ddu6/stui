@@ -4,6 +4,5 @@ export declare function createASStruct(): {
     main: HTMLElement;
     sideContent: HTMLDivElement;
     article: HTMLElement;
-    panel: HTMLDivElement;
     settings: HTMLDetailsElement;
 };

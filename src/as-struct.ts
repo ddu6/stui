@@ -12,7 +12,6 @@ export function createNamedStretchedElement(name: string, content: Element) {
 export function createASStruct() {
     const {element, main, sideContent} = createLRStruct()
     const article = document.createElement('article')
-    const panel = document.createElement('div')
     const settings = document.createElement('details')
     const summary = document.createElement('summary')
     const colorScheme = document.createElement('select')
@@ -21,8 +20,7 @@ export function createASStruct() {
     colorScheme.innerHTML = '<option>auto</option><option>dark</option><option>light</option>'
     fontSize.innerHTML = '<option>small</option><option>medium</option><option>large</option>'
     main.append(article)
-    sideContent.append(panel)
-    panel.append(settings)
+    sideContent.append(settings)
     settings.append(summary)
     settings.append(createNamedStretchedElement('Color Scheme', colorScheme))
     settings.append(createNamedStretchedElement('Font Size', fontSize))
@@ -53,7 +51,6 @@ export function createASStruct() {
         main,
         sideContent,
         article,
-        panel,
         settings,
     }
 }
