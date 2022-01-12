@@ -1,4 +1,1 @@
-export interface InitOptions {
-    css?: string;
-}
-export declare function init(options?: InitOptions): void;
+export declare function init(): void;

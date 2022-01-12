@@ -1,8 +1,4 @@
-import {all} from './lib/css'
-export interface InitOptions {
-    css?: string
-}
-export function init(options: InitOptions = {}) {
+export function init() {
     if (document.head.querySelector('meta[charset]') === null) {
         const meta = document.createElement('meta')
         meta.setAttribute('charset', 'utf8')
@@ -13,13 +9,5 @@ export function init(options: InitOptions = {}) {
         meta.name = 'viewport'
         meta.content = 'width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0'
         document.head.append(meta)
-    }
-    const style = document.createElement('style')
-    style.textContent = all
-    document.head.append(style)
-    if (options.css !== undefined) {
-        const style = document.createElement('style')
-        style.textContent = options.css
-        document.head.append(style)
     }
 }
