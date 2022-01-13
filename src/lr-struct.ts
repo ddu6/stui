@@ -26,7 +26,6 @@ export function createLRStruct() {
         side.classList.remove('active')
     })
     sash.addEventListener('mousedown', e => {
-        e.preventDefault()
         sashing = true
         sashX = e.clientX
         sideWidth = side.offsetWidth
@@ -46,7 +45,6 @@ export function createLRStruct() {
         if (!sashing) {
             return
         }
-        e.preventDefault()
         const dx = e.clientX - sashX
         const newWidth = Math.min(Math.max(sideWidth + dx, 30), element.offsetWidth)
         side.style.width = newWidth + 'px'
@@ -58,9 +56,6 @@ export function createLRStruct() {
         }
     })
     sash.addEventListener('touchmove', e => {
-        if (e.cancelable) {
-            e.preventDefault()
-        }
         if (!sashing) {
             return
         }
