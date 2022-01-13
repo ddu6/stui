@@ -26,12 +26,16 @@ export function createLRStruct() {
         side.classList.remove('active')
     })
     sash.addEventListener('mousedown', e => {
+        e.preventDefault()
         sashing = true
         sashX = e.clientX
         sideWidth = side.offsetWidth
         element.classList.add('sashing')
     })
     sash.addEventListener('touchstart', e => {
+        if (e.cancelable) {
+            e.preventDefault()
+        }
         sashing = true
         const touch = extractMainTouch(e)
         if (touch === undefined) {
@@ -40,11 +44,12 @@ export function createLRStruct() {
         sashX = touch.clientX
         sideWidth = side.offsetWidth
         element.classList.add('sashing')
-    })
+    }, {passive: false})
     addEventListener('mousemove', e => {
-        if (!sashing) {
+        if (!sashing || !element.isConnected) {
             return
         }
+        e.preventDefault()
         const dx = e.clientX - sashX
         const newWidth = Math.min(Math.max(sideWidth + dx, 30), element.offsetWidth)
         side.style.width = newWidth + 'px'
@@ -59,6 +64,9 @@ export function createLRStruct() {
         if (!sashing) {
             return
         }
+        if (e.cancelable) {
+            e.preventDefault()
+        }
         const touch = extractMainTouch(e)
         if (touch === undefined) {
             return
@@ -72,9 +80,9 @@ export function createLRStruct() {
         } else {
             sideContent.classList.remove('vanished')
         }
-    })
+    }, {passive: false})
     const end = async () => {
-        if (sashing !== true) {
+        if (sashing !== true || !element.isConnected) {
             return
         }
         sashing = false
