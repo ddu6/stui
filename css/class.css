@@ -39,16 +39,6 @@ html[data-color-scheme=dark] .invert {
 }
 
 /* others */
-.log {
-    font-size: var(--length-font-log);
-}
-
-.stretch {
-    display: grid;
-    grid-template-columns: 1fr;
-    margin: var(--length-gap) 0;
-}
-
 .warn {
     color: var(--color-warn);
 }

@@ -1,14 +1,5 @@
+import {createNamedStretchedElement} from './common'
 import {createLRStruct} from './lr-struct'
-export function createNamedStretchedElement(name: string, content: Element) {
-    const element = document.createElement('div')
-    const nameEle = document.createElement('div')
-    element.classList.add('stretch')
-    nameEle.classList.add('log')
-    nameEle.textContent = name
-    element.append(nameEle)
-    element.append(content)
-    return element
-}
 export function createASStruct() {
     const {element, main, sideContent} = createLRStruct()
     const article = document.createElement('article')

@@ -59,7 +59,7 @@ samp {
 code {
     background-color: var(--color-span);
     border-radius: var(--length-space);
-    font-size: var(--length-font-log);
+    font-size: var(--length-font-code);
     padding: 0 var(--length-space);
 }
 
@@ -182,7 +182,7 @@ kbd {
     border-radius: var(--length-space);
     display: inline-block;
     font-family: var(--font-mono);
-    font-size: var(--length-font-log);
+    font-size: var(--length-font-code);
     line-height: 1;
     padding: var(--length-space);
 }
@@ -211,7 +211,7 @@ p {
 pre {
     background-color: var(--color-pre);
     border-radius: var(--length-padding);
-    font-size: var(--length-font-log);
+    font-size: var(--length-font-code);
     margin: var(--length-gap) 0;
     padding: var(--length-padding);
 }

@@ -1,4 +1,3 @@
-export declare function createNamedStretchedElement(name: string, content: Element): HTMLDivElement;
 export declare function createASStruct(): {
     element: HTMLDivElement;
     main: HTMLElement;
