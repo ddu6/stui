@@ -57,7 +57,7 @@ samp {
 }
 
 code {
-    background-color: var(--color-span);
+    background-color: var(--color-border);
     border-radius: var(--length-space);
     font-size: var(--length-font-code);
     padding: 0 var(--length-space);
@@ -137,7 +137,7 @@ img {
 input,
 select,
 textarea {
-    background-color: var(--color-bg);
+    background-color: var(--color-background);
     border: 1px solid var(--color-border);
     border-radius: var(--length-space);
     color: inherit;
