@@ -157,12 +157,12 @@ function trans(c) {
         case 'dark': return Math.round((T - B) * c / 510 + B)
     }
 }
-const str = process.argv[3]
-const val = colors[str]
+const arg = process.argv[3]
+const val = colors[arg.toLowerCase()]
 if (val !== undefined) {
     console.log(`rgb(${trans(val[0])} ${trans(val[1])} ${trans(val[2])})`)
 } else {
-    const c = Number(str)
+    const c = Number(arg)
     if (isFinite(c)) {
         console.log(trans(c))
     }
