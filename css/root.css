@@ -65,7 +65,7 @@ html {
     --color-function: goldenrod;
     --color-number: green;
     --color-comment: limegreen;
-    --color-class: darkcyan;
+    --color-class: lightseagreen;
     --color-modifier: dodgerblue;
     --color-variable: deepskyblue;
     --color-keyword: mediumvioletred;
@@ -84,7 +84,7 @@ html[data-color-scheme=dark] {
     --color-function: rgb(190 171 122);
     --color-number: rgb(111 157 111);
     --color-comment: rgb(129 186 129);
-    --color-class: rgb(111 161 161);
+    --color-class: rgb(122 176 173);
     --color-modifier: rgb(122 163 204);
     --color-variable: rgb(111 181 204);
     --color-keyword: rgb(183 118 159);
@@ -104,7 +104,7 @@ html[data-color-scheme=dark] {
         --color-function: rgb(190 171 122);
         --color-number: rgb(111 157 111);
         --color-comment: rgb(129 186 129);
-        --color-class: rgb(111 161 161);
+        --color-class: rgb(122 176 173);
         --color-modifier: rgb(122 163 204);
         --color-variable: rgb(111 181 204);
         --color-keyword: rgb(183 118 159);
