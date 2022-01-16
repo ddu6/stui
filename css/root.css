@@ -131,7 +131,7 @@ html {
 
 /* html */
 html {
-    background-color: var(--color-background) !important;
+    background-color: var(--color-background);
     color: var(--color-text);
     font-family: var(--font);
     line-height: var(--number-ratio-line);
