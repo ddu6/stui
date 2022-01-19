@@ -223,6 +223,10 @@ table {
     font: inherit;
 }
 
+table>caption {
+    margin: var(--length-space) 0;
+}
+
 td,
 th {
     border: 1px solid var(--color-border);
@@ -232,14 +236,6 @@ th {
 th {
     font-weight: normal;
     text-align: center;
-}
-
-tr:nth-child(even) {
-    background-color: var(--color-pre);
-}
-
-table>caption {
-    margin: var(--length-space) 0;
 }
 
 /* iframe */
