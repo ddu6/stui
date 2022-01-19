@@ -57,7 +57,7 @@ samp {
 }
 
 code {
-    background-color: var(--color-border);
+    background-color: var(--color-pre);
     border-radius: var(--length-space);
     font-size: var(--length-font-code);
     padding: 0 var(--length-space);
