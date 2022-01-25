@@ -158,9 +158,9 @@ function trans(c) {
     }
 }
 const arg = process.argv[3]
-const val = colors[arg.toLowerCase()]
-if (val !== undefined) {
-    console.log(`rgb(${trans(val[0])} ${trans(val[1])} ${trans(val[2])})`)
+const value = colors[arg.toLowerCase()]
+if (value !== undefined) {
+    console.log(`rgb(${trans(value[0])} ${trans(value[1])} ${trans(value[2])})`)
 } else {
     const c = Number(arg)
     if (isFinite(c)) {

@@ -18,7 +18,6 @@ export function createLRStruct() {
     let sashing = false
     let sashX = 0
     let sideWidth = side.offsetWidth
-    const sashListeners: (() => Promise<void>)[] = []
     button.addEventListener('click', () => {
         side.classList.add('active')
     })
@@ -81,22 +80,18 @@ export function createLRStruct() {
             sideContent.classList.remove('vanished')
         }
     }, {passive: false})
-    const end = async () => {
+    const end = () => {
         if (sashing !== true || !element.isConnected) {
             return
         }
         sashing = false
         element.classList.remove('sashing')
-        for (const listener of sashListeners) {
-            await listener()
-        }
     }
     addEventListener('mouseup', end)
     addEventListener('touchend', end)
     return {
         element,
         main,
-        sideContent,
-        sashListeners
+        sideContent
     }
 }
