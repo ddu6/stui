@@ -51,8 +51,8 @@ export function createLRStruct() {
         e.preventDefault()
         const dx = e.clientX - sashX
         const newWidth = Math.min(Math.max(sideWidth + dx, 30), element.offsetWidth)
-        side.style.width = newWidth + 'px'
-        main.style.marginLeft = side.offsetWidth + 'px'
+        side.style.width = `${newWidth}px`
+        main.style.marginLeft = `${side.offsetWidth}px`
         if (side.offsetWidth <= 50) {
             sideContent.classList.add('vanished')
         } else {
@@ -72,8 +72,8 @@ export function createLRStruct() {
         }
         const dx = touch.clientX - sashX
         const newWidth = Math.min(Math.max(sideWidth + dx, 30), element.offsetWidth)
-        side.style.width = newWidth + 'px'
-        main.style.marginLeft = side.offsetWidth + 'px'
+        side.style.width = `${newWidth}px`
+        main.style.marginLeft = `${side.offsetWidth}px`
         if (side.offsetWidth <= 50) {
             sideContent.classList.add('vanished')
         } else {
