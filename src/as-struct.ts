@@ -8,8 +8,12 @@ export function createASStruct() {
     const colorScheme = document.createElement('select')
     const fontSize = document.createElement('select')
     summary.textContent = 'Settings'
-    colorScheme.innerHTML = '<option>auto</option><option>dark</option><option>light</option>'
-    fontSize.innerHTML = '<option>small</option><option>medium</option><option>large</option>'
+    colorScheme.add(new Option('auto'))
+    colorScheme.add(new Option('light'))
+    colorScheme.add(new Option('dark'))
+    fontSize.add(new Option('small'))
+    fontSize.add(new Option('medium'))
+    fontSize.add(new Option('large'))
     main.append(article)
     sideContent.append(settings)
     settings.append(summary)
