@@ -15,7 +15,7 @@ body>.lr-struct>button {
 }
 
 body>.lr-struct>aside {
-    background-color: var(--color-pre);
+    background: var(--color-pre);
     border-right: 1px solid var(--color-border);
     box-sizing: border-box;
     display: flow-root;
@@ -52,7 +52,7 @@ body>.lr-struct>aside>.sash {
 }
 
 body>.lr-struct.sashing>aside>.sash {
-    background-color: var(--color-slice);
+    background: var(--color-slice);
 }
 
 body>.lr-struct>aside>.content.vanished {

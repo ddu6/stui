@@ -131,7 +131,7 @@ html {
 
 /* html */
 html {
-    background-color: var(--color-background);
+    background: var(--color-background);
     color: var(--color-text);
     font-family: var(--font);
     line-height: var(--number-ratio-line);
@@ -159,13 +159,13 @@ html {
 }
 
 ::-webkit-scrollbar {
-    background-color: transparent;
+    background: transparent;
 }
 
 ::-webkit-scrollbar-corner {
-    background-color: transparent;
+    background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(--color-slice);
+    background: var(--color-slice);
 }

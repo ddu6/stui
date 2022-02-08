@@ -27,7 +27,7 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-    background-color: var(--color-slice);
+    background: var(--color-slice);
     border: none;
     border-radius: var(--length-space);
     color: inherit;
@@ -44,7 +44,7 @@ button.pushing,
 input[type="button"].pushing,
 input[type="reset"].pushing,
 input[type="submit"].pushing {
-    background-color: var(--color-selection);
+    background: var(--color-selection);
 }
 
 /* code */
@@ -57,14 +57,14 @@ samp {
 }
 
 code {
-    background-color: var(--color-pre);
+    background: var(--color-pre);
     border-radius: var(--length-space);
     font-size: var(--length-font-code);
     padding: 0 var(--length-space);
 }
 
 pre code {
-    background-color: transparent;
+    background: transparent;
     border-radius: 0;
     font: inherit;
     padding: 0;
@@ -122,7 +122,7 @@ h4 {
 
 /* hr */
 hr {
-    background-color: var(--color-border);
+    background: var(--color-border);
     border: 0;
     height: 3px;
     margin: var(--length-gap) 0;
@@ -137,7 +137,7 @@ img {
 input,
 select,
 textarea {
-    background-color: var(--color-background);
+    background: var(--color-background);
     border: 1px solid var(--color-border);
     border-radius: var(--length-space);
     color: inherit;
@@ -209,7 +209,7 @@ p {
 
 /* pre */
 pre {
-    background-color: var(--color-pre);
+    background: var(--color-pre);
     border-radius: var(--length-padding);
     font-size: var(--length-font-code);
     margin: var(--length-gap) 0;
