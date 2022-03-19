@@ -5,4 +5,9 @@ export function init() {
         meta.content = 'width=device-width, initial-scale=1';
         document.head.append(meta);
     }
+    if (document.head.querySelector('meta[charset]') === null) {
+        const meta = document.createElement('meta');
+        meta.setAttribute('charset', 'utf-8');
+        document.head.append(meta);
+    }
 }
