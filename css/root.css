@@ -133,6 +133,7 @@ html {
 html {
     background: var(--color-background);
     color: var(--color-text);
+    color-scheme: light dark;
     font-family: var(--font);
     line-height: var(--number-ratio-line);
 }
