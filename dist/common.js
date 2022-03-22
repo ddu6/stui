@@ -13,7 +13,6 @@ export function createNamedStretchedElement(name, content) {
     const element = document.createElement('div');
     const nameEle = document.createElement('div');
     element.style.display = 'grid';
-    element.style.gridTemplateColumns = '1fr';
     element.style.margin = 'var(--length-gap) 0';
     nameEle.style.fontSize = 'var(--length-font-code)';
     nameEle.textContent = name;
