@@ -1,6 +1,7 @@
 import { createNamedStretchedElement } from './common';
 import { createLRStruct } from './lr-struct';
 export function createASStruct() {
+    var _a, _b, _c, _d;
     const { element, main, sideContent } = createLRStruct();
     const article = document.createElement('article');
     const settings = document.createElement('details');
@@ -21,14 +22,10 @@ export function createASStruct() {
     settings.append(createNamedStretchedElement('Font Size', fontSize));
     document.documentElement.dataset.colorScheme
         = colorScheme.value
-            = localStorage.getItem('st-color-scheme')
-                ?? document.documentElement.dataset.colorScheme
-                ?? 'auto';
+            = (_b = (_a = localStorage.getItem('st-color-scheme')) !== null && _a !== void 0 ? _a : document.documentElement.dataset.colorScheme) !== null && _b !== void 0 ? _b : 'auto';
     document.documentElement.dataset.fontSize
         = fontSize.value
-            = localStorage.getItem('st-font-size')
-                ?? document.documentElement.dataset.fontSize
-                ?? 'small';
+            = (_d = (_c = localStorage.getItem('st-font-size')) !== null && _c !== void 0 ? _c : document.documentElement.dataset.fontSize) !== null && _d !== void 0 ? _d : 'small';
     colorScheme.addEventListener('change', () => {
         localStorage.setItem('st-color-scheme', document.documentElement.dataset.colorScheme = colorScheme.value);
     });
